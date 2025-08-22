@@ -12,22 +12,22 @@ lab=VIN}
 N 570 -1330 640 -1330 {
 lab=VBN}
 N 570 -1290 570 -1270 {
-lab=Vout}
+lab=VOUT}
 N 570 -1290 740 -1290 {
-lab=Vout}
+lab=VOUT}
 N 570 -1300 570 -1290 {
-lab=Vout}
+lab=VOUT}
 N 680 -1330 740 -1330 {
-lab=BP}
+lab=VBP}
 N 570 -1360 740 -1360 {
 lab=VIN}
 N 740 -1300 740 -1290 {
-lab=Vout}
+lab=VOUT}
 N 780 -1330 820 -1330 {
 lab=VSP}
 C {sg13g2_pr/sg13_lv_nmos.sym} 550 -1330 2 1 {name=M1
 l=0.13u
-w=1u
+w=0.74u
 ng=4
 m=1
 model=sg13_lv_nmos
@@ -35,10 +35,10 @@ spiceprefix=X
 }
 C {iopin.sym} 570 -1390 0 0 {name=p1 lab=VIN}
 C {iopin.sym} 490 -1330 0 1 {name=p3 lab=VSN}
-C {iopin.sym} 570 -1270 0 0 {name=p4 lab=Vout}
+C {iopin.sym} 570 -1270 0 0 {name=p4 lab=VOUT}
 C {sg13g2_pr/sg13_lv_pmos.sym} 760 -1330 0 1 {name=M2
 l=0.13u
-w=1u
+w=1.45u
 ng=4
 m=1
 model=sg13_lv_pmos

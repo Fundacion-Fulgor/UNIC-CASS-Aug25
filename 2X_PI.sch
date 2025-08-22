@@ -5,123 +5,85 @@ V {}
 S {}
 F {}
 E {}
-N 960 -420 1070 -420 {lab=VOUT}
-N 960 -420 960 -220 {lab=VOUT}
+N 1160 -420 1270 -420 {lab=VOUT}
 N 580 -630 660 -630 {lab=#net1}
 N 580 -220 660 -220 {lab=#net2}
 N 710 -710 710 -670 {lab=VDD}
 N 710 -180 710 -140 {lab=VSS}
 N 710 -590 710 -550 {lab=VSS}
 N 710 -300 710 -260 {lab=VDD}
-N 780 -630 960 -630 {lab=VOUT}
-N 780 -220 960 -220 {lab=VOUT}
-N 200 -740 240 -740 {lab=VINI}
-N 200 -720 240 -720 {lab=VINIB}
-N 200 -540 240 -540 {lab=VINQ}
-N 200 -520 240 -520 {lab=VINQB}
-N 290 -620 290 -580 {lab=VDD}
-N 250 -680 250 -640 {lab=VSS}
-N 250 -480 250 -440 {lab=VSS}
-N 290 -820 290 -780 {lab=VDD}
-N 290 -680 290 -640 {lab=VS1}
-N 290 -480 290 -440 {lab=VS2}
-N 490 -580 490 -540 {lab=VSS}
-N 530 -720 530 -680 {lab=VDD}
-N 530 -580 530 -540 {lab=VS1}
-N 400 -640 480 -640 {lab=#net3}
-N 400 -620 480 -620 {lab=#net4}
-N 400 -730 400 -640 {lab=#net3}
-N 340 -730 400 -730 {lab=#net3}
-N 340 -530 400 -530 {lab=#net4}
-N 400 -620 400 -530 {lab=#net4}
-N 200 -330 240 -330 {lab=VINI}
-N 200 -310 240 -310 {lab=VINIB}
-N 200 -130 240 -130 {lab=VINQ}
-N 200 -110 240 -110 {lab=VINQB}
-N 290 -210 290 -170 {lab=VDD}
-N 250 -270 250 -230 {lab=VSS}
-N 250 -70 250 -30 {lab=VSS}
-N 290 -410 290 -370 {lab=VDD}
-N 290 -270 290 -230 {lab=VS1}
-N 290 -70 290 -30 {lab=VS2}
-N 490 -170 490 -130 {lab=VSS}
-N 530 -310 530 -270 {lab=VDD}
-N 530 -170 530 -130 {lab=VS1}
-N 400 -230 480 -230 {lab=#net5}
-N 400 -210 480 -210 {lab=#net6}
-N 400 -320 400 -230 {lab=#net5}
-N 340 -320 400 -320 {lab=#net5}
-N 340 -120 400 -120 {lab=#net6}
-N 400 -210 400 -120 {lab=#net6}
-N 960 -630 960 -420 {lab=VOUT}
-N 290 -1020 290 -980 {lab=VDD}
-N 290 -900 290 -860 {lab=VSS}
-N 200 -940 240 -940 {lab=VINI}
-N 360 -940 400 -940 {lab=VINIB}
-N 620 -1020 620 -980 {lab=VDD}
-N 620 -900 620 -860 {lab=VSS}
-N 530 -940 570 -940 {lab=VINQ}
-N 690 -940 730 -940 {lab=VINQB}
+N 360 -690 400 -690 {lab=VINI}
+N 360 -610 400 -610 {lab=VINIB}
+N 360 -650 400 -650 {lab=VINQ}
+N 360 -570 400 -570 {lab=VINQB}
+N 360 -160 400 -160 {lab=VINI}
+N 360 -240 400 -240 {lab=VINIB}
+N 360 -280 400 -280 {lab=VINQ}
+N 360 -200 400 -200 {lab=VINQB}
+N 960 -420 960 -220 {lab=#net3}
+N 220 -540 260 -540 {lab=VINI}
+N 220 -500 260 -500 {lab=VINQ}
+N 780 -630 960 -630 {lab=#net3}
+N 780 -220 960 -220 {lab=#net3}
+N 410 -520 410 -480 {lab=VSS}
+N 490 -780 490 -740 {lab=VDD}
+N 220 -460 260 -460 {lab=VINIB}
+N 220 -420 260 -420 {lab=VINQB}
+N 410 -110 410 -70 {lab=VSS}
+N 960 -420 1040 -420 {lab=#net3}
+N 1090 -500 1090 -460 {lab=VDD}
+N 1090 -380 1090 -340 {lab=VSS}
+N 960 -630 960 -420 {lab=#net3}
+N 490 -370 490 -330 {lab=VDD}
+N 490 -520 490 -480 {lab=VS[1:0]}
+N 470 -520 470 -480 {lab=VDD}
+N 220 -380 260 -380 {lab=VS[1:0]}
+N 220 -340 260 -340 {lab=VEN}
+N 470 -110 470 -70 {lab=VDD}
+N 490 -110 490 -70 {lab=VS[1:0]}
 C {iopin.sym} 710 -710 0 0 {name=p1 lab=VDD}
-C {opin.sym} 1070 -420 0 0 {name=p2 lab=VOUT}
-C {ipin.sym} 200 -940 0 0 {name=p3 lab=VINI}
-C {ipin.sym} 530 -940 0 0 {name=p4 lab=VINQ}
+C {opin.sym} 1270 -420 0 0 {name=p2 lab=VOUT}
+C {ipin.sym} 220 -540 0 0 {name=p3 lab=VINI}
+C {ipin.sym} 220 -500 0 0 {name=p4 lab=VINQ}
 C {inv.sym} 620 -490 0 0 {name=x1}
 C {inv.sym} 620 -80 0 0 {name=x2}
 C {iopin.sym} 710 -140 0 0 {name=p5 lab=VSS}
 C {lab_wire.sym} 710 -300 2 0 {name=p6 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 710 -550 2 0 {name=p7 sig_type=std_logic lab=VSS}
-C {res.sym} 1420 -750 3 0 {name=R1
+C {res.sym} 1330 -910 3 0 {name=R1
 value=250
 footprint=1206
 device=resistor
 m=1
 spice_ignore=true}
-C {res.sym} 1595 -620 3 0 {name=R2
+C {res.sym} 1325 -830 3 0 {name=R2
 value=250
 footprint=1206
 device=resistor
 m=1
 spice_ignore=true}
-C {MUX_2_1.sym} 210 -450 0 0 {name=x3}
-C {MUX_2_1.sym} 210 -650 0 0 {name=x4}
-C {lab_wire.sym} 200 -740 0 0 {name=p8 sig_type=std_logic lab=VINI}
-C {lab_wire.sym} 200 -720 0 0 {name=p9 sig_type=std_logic lab=VINIB}
-C {lab_wire.sym} 200 -540 0 0 {name=p10 sig_type=std_logic lab=VINQ}
-C {lab_wire.sym} 200 -520 0 0 {name=p11 sig_type=std_logic lab=VINQB}
-C {lab_wire.sym} 290 -620 2 0 {name=p12 sig_type=std_logic lab=VDD}
-C {lab_wire.sym} 250 -640 2 0 {name=p13 sig_type=std_logic lab=VSS}
-C {lab_wire.sym} 250 -440 2 0 {name=p14 sig_type=std_logic lab=VSS}
-C {lab_wire.sym} 290 -820 2 0 {name=p15 sig_type=std_logic lab=VDD}
-C {ipin.sym} 1240 -680 0 0 {name=p16 lab=VS1}
-C {lab_wire.sym} 290 -640 2 0 {name=p17 sig_type=std_logic lab=VS1}
-C {lab_wire.sym} 290 -440 2 0 {name=p18 sig_type=std_logic lab=VS2}
-C {ipin.sym} 1240 -660 0 0 {name=p19 lab=VS2}
-C {MUX_2_1.sym} 450 -550 0 0 {name=x5}
-C {lab_wire.sym} 490 -540 2 0 {name=p20 sig_type=std_logic lab=VSS}
-C {lab_wire.sym} 530 -720 2 0 {name=p21 sig_type=std_logic lab=VDD}
-C {lab_wire.sym} 530 -540 2 0 {name=p22 sig_type=std_logic lab=VS1}
-C {MUX_2_1.sym} 210 -40 0 0 {name=x6}
-C {MUX_2_1.sym} 210 -240 0 0 {name=x7}
-C {lab_wire.sym} 290 -210 2 0 {name=p27 sig_type=std_logic lab=VDD}
-C {lab_wire.sym} 250 -230 2 0 {name=p28 sig_type=std_logic lab=VSS}
-C {lab_wire.sym} 250 -30 2 0 {name=p29 sig_type=std_logic lab=VSS}
-C {lab_wire.sym} 290 -410 2 0 {name=p30 sig_type=std_logic lab=VDD}
-C {lab_wire.sym} 290 -230 2 0 {name=p31 sig_type=std_logic lab=VS1}
-C {lab_wire.sym} 290 -30 2 0 {name=p32 sig_type=std_logic lab=VS2}
-C {MUX_2_1.sym} 450 -140 0 0 {name=x8}
-C {lab_wire.sym} 490 -130 2 0 {name=p33 sig_type=std_logic lab=VSS}
-C {lab_wire.sym} 530 -310 2 0 {name=p34 sig_type=std_logic lab=VDD}
-C {lab_wire.sym} 530 -130 2 0 {name=p35 sig_type=std_logic lab=VS1}
-C {iopin.sym} 290 -1020 0 0 {name=p36 lab=VDD}
-C {inv.sym} 200 -800 0 0 {name=x9}
-C {lab_wire.sym} 290 -860 2 0 {name=p37 sig_type=std_logic lab=VSS}
-C {lab_wire.sym} 400 -940 2 0 {name=p38 sig_type=std_logic lab=VINIB}
-C {iopin.sym} 620 -1020 0 0 {name=p39 lab=VDD}
-C {inv.sym} 530 -800 0 0 {name=x10}
-C {lab_wire.sym} 620 -860 2 0 {name=p40 sig_type=std_logic lab=VSS}
-C {lab_wire.sym} 730 -940 2 0 {name=p41 sig_type=std_logic lab=VINQB}
-C {lab_wire.sym} 200 -330 0 0 {name=p23 sig_type=std_logic lab=VINI}
-C {lab_wire.sym} 200 -310 0 0 {name=p24 sig_type=std_logic lab=VINIB}
-C {lab_wire.sym} 200 -130 0 0 {name=p25 sig_type=std_logic lab=VINQ}
-C {lab_wire.sym} 200 -110 0 0 {name=p26 sig_type=std_logic lab=VINQB}
+C {lab_wire.sym} 360 -690 0 0 {name=p8 sig_type=std_logic lab=VINI}
+C {lab_wire.sym} 360 -610 0 0 {name=p9 sig_type=std_logic lab=VINIB}
+C {lab_wire.sym} 360 -650 0 0 {name=p10 sig_type=std_logic lab=VINQ}
+C {lab_wire.sym} 360 -570 0 0 {name=p11 sig_type=std_logic lab=VINQB}
+C {ipin.sym} 220 -380 0 0 {name=p16 lab=VS[1:0]}
+C {lab_wire.sym} 360 -160 0 0 {name=p23 sig_type=std_logic lab=VINI}
+C {lab_wire.sym} 360 -240 0 0 {name=p24 sig_type=std_logic lab=VINIB}
+C {lab_wire.sym} 360 -280 0 0 {name=p25 sig_type=std_logic lab=VINQ}
+C {lab_wire.sym} 360 -200 0 0 {name=p26 sig_type=std_logic lab=VINQB}
+C {MUX_4_1_EN.sym} 130 -470 0 0 {name=x11}
+C {lab_wire.sym} 410 -480 2 0 {name=p12 sig_type=std_logic lab=VSS}
+C {MUX_4_1_EN.sym} 130 -60 0 0 {name=x3}
+C {lab_wire.sym} 490 -780 2 0 {name=p13 sig_type=std_logic lab=VDD}
+C {ipin.sym} 220 -460 0 0 {name=p15 lab=VINIB}
+C {ipin.sym} 220 -420 0 0 {name=p17 lab=VINQB}
+C {lab_wire.sym} 410 -70 2 0 {name=p20 sig_type=std_logic lab=VSS}
+C {inv.sym} 1000 -280 0 0 {name=x4}
+C {lab_wire.sym} 1090 -340 2 0 {name=p19 sig_type=std_logic lab=VSS}
+C {lab_wire.sym} 1090 -500 2 0 {name=p14 sig_type=std_logic lab=VDD}
+C {lab_wire.sym} 490 -370 2 0 {name=p21 sig_type=std_logic lab=VDD}
+C {lab_wire.sym} 490 -480 2 0 {name=p22 sig_type=std_logic lab=VS[1:0]}
+C {lab_wire.sym} 470 -480 0 0 {name=p27 sig_type=std_logic lab=VDD}
+C {ipin.sym} 220 -340 0 0 {name=p18 lab=VEN}
+C {lab_wire.sym} 470 -70 0 0 {name=p28 sig_type=std_logic lab=VEN}
+C {lab_wire.sym} 490 -70 2 0 {name=p29 sig_type=std_logic lab=VS[1:0]}
