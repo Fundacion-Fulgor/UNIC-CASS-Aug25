@@ -4,3 +4,4 @@ K {}
 V {}
 S {}
 E {}
+T {TEXTO DE EJEMPLO} -70 -30 0 0 0.4 0.4 {}
