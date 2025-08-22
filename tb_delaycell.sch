@@ -4,55 +4,115 @@ K {}
 V {}
 S {}
 E {}
-N 530 -160 670 -160 {
-lab=VOUT}
-C {devices/code_shown.sym} -10 300 0 0 {name=CODE only_toplevel=false value="
-.option scale=1e-6
-.save v(vin) v(vout) 
-.control
-tran 2n 6u
-plot v(vin) v(vout) 
-plot v(vin) v(vout)+2
-.endc
-
-.measure tran tdelay
-+ TRIG tran1.V(VIN) TD=0u VAL=0.6 RISE=1
-+ TARG tran1.V(VOUT) TD=0u VAL=0.6 RISE=1
+B 2 845 -525 1645 -125 {flags=graph
+y1=0
+y2=1.5
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=-9.189097e-11
+x2=1.2092904e-09
+divx=5
+subdivx=1
 
 
-"}
-C {devices/vsource.sym} -160 -110 0 0 {name=VCC value=1.2}
-C {devices/vsource.sym} -240 -110 0 0 {name=VSS value=0}
-C {devices/gnd.sym} -240 -80 0 0 {name=l1 lab=GND}
-C {devices/gnd.sym} -160 -80 0 0 {name=l2 lab=GND}
-C {devices/vsource.sym} -240 -210 0 0 {name=VIN value="PULSE(0 1.2 3u 1n 1n 12u 24u)"}
-C {devices/lab_pin.sym} -240 -240 0 0 {name=p1 sig_type=std_logic lab=VIN}
-C {devices/lab_pin.sym} -240 -180 0 0 {name=p2 sig_type=std_logic lab=VSS}
-C {devices/lab_pin.sym} -240 -140 0 0 {name=p3 sig_type=std_logic lab=VSS}
-C {devices/lab_pin.sym} 110 -160 0 0 {name=p4 sig_type=std_logic lab=VIN}
-C {devices/lab_pin.sym} 290 -120 0 0 {name=p5 sig_type=std_logic lab=VSS}
-C {devices/lab_pin.sym} -160 -140 0 0 {name=p6 sig_type=std_logic lab=VCC}
-C {devices/lab_pin.sym} 590 -160 1 0 {name=p8 sig_type=std_logic lab=VOUT}
-C {devices/capa.sym} 670 -130 0 0 {name=C1
-m=1
-value=10f
-footprint=1206
-device="ceramic capacitor"}
-C {devices/lab_pin.sym} 670 -100 0 0 {name=p14 sig_type=std_logic lab=VSS}
-C {devices/lab_pin.sym} 270 -200 0 0 {name=p7 sig_type=std_logic lab=VCC}
-C {devices/code_shown.sym} -840 110 0 0 {name=MODEL1 only_toplevel=true
+dataset=-1
+unitx=1
+logx=0
+logy=0
+rawfile=$netlist_dir/tran_logic_not.raw
+color="6 7"
+node="in
+
+net2"}
+B 2 1715 -525 2515 -125 {flags=graph
+y1=0
+y2=1.5
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=-9.189097e-11
+x2=1.2092904e-09
+divx=5
+subdivx=1
+
+
+dataset=-1
+unitx=1
+logx=0
+logy=0
+rawfile=$netlist_dir/tran_logic_not.raw
+color=10
+node=out}
+N 850 250 850 270 {
+lab=GND}
+N 1390 210 1390 270 {
+lab=GND}
+N 1390 -20 1390 150 {
+lab=#net1}
+N 850 130 850 190 {
+lab=in}
+N 830 130 850 130 {
+lab=in}
+N 1182.5 193.75 1182.5 233.75 {lab=GND}
+N 1057.5 322.5 1057.5 342.5 {lab=GND}
+N 1040 -20 1390 -20 {lab=#net1}
+N 970 170 970 300 {lab=GND}
+N 1057.5 260 1060 260 {lab=#net2}
+N 1060 167.5 1060 260 {lab=#net2}
+N 970 170 1020 170 {lab=GND}
+N 850 120 980 120 {lab=in}
+N 850 120 850 130 {lab=in}
+N 1040 -20 1040 70 {lab=#net1}
+N 1180 120 1180 130 {lab=out}
+N 1180 120 1200 120 {lab=out}
+N 1090 120 1180 120 {lab=out}
+C {devices/launcher.sym} 1516.25 23.75 0 0 {name=h3
+descr="Simulate" 
+tclcommand="xschem save; xschem netlist; xschem simulate"
+}
+C {devices/code_shown.sym} 850 390 0 0 {name=MODEL only_toplevel=true
 format="tcleval( @value )"
 value="
-
-.param corner=0
-
-.if (corner==0)
-.lib $::SG13G2_MODELS/cornerMOSlv.lib mos_tt
-.lib $::SG13G2_MODELS/cornerMOSlv.lib mos_tt
-.lib $::SG13G2_MODELS/cornerRES.lib res_typ
-.lib $::SG13G2_MODELS/cornerCAP.lib cap_typ
-.endif
-
-.include /opt/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+.lib cornerMOSlv.lib mos_tt
 "}
-C {devices/lab_pin.sym} 410 -160 2 0 {name=p13 sig_type=std_logic lab=VOUT}
+C {devices/code_shown.sym} 1457.5 90 0 0 {name=NGSPICE only_toplevel=true 
+value="
+.param temp=27
+.Param VCONT=0.9
+.control
+  save all
+  step param VCONT 0.40 0.90 0.05   ; barrido 0.40→0.90 V en pasos de 50 mV
+   *Vcont vcont 0 PWL(0n 0.40 10n 0.90)
+  tran 1p 3n
+  *meas tran tdelay TRIG v(in) VAL=0.9 FALL=1 TARG v(out) VAL=0.9 RISE=1
+  write tran_logic_not.raw
+.endc
+.end
+"
+}
+C {devices/gnd.sym} 970 300 0 0 {name=l3 lab=GND}
+C {devices/gnd.sym} 850 270 0 0 {name=l4 lab=GND}
+C {devices/vsource.sym} 850 220 0 0 {name=Vin1 value="dc 0 ac 0 pulse(0, 1.2, 0, 25p, 25p, 250p, 500p ) "}
+C {devices/vsource.sym} 1390 180 0 0 {name=Vdd1 value=1.2}
+C {devices/gnd.sym} 1390 270 0 0 {name=l5 lab=GND}
+C {devices/launcher.sym} 1522.5 -22.5 0 0 {name=h1
+descr="load waves Ctrl + left click" 
+tclcommand="xschem raw_read $netlist_dir/tran_logic_not.raw tran"
+}
+C {devices/lab_pin.sym} 830 130 0 0 {name=p9 sig_type=std_logic lab=in}
+C {devices/lab_pin.sym} 1190 120 2 0 {name=p10 sig_type=std_logic lab=out}
+C {devices/capa.sym} 1182.5 162.5 0 0 {name=C2
+m=1
+value=1f
+footprint=1206
+device="ceramic capacitor"
+}
+C {devices/gnd.sym} 1182.5 232.5 0 0 {name=l8 lab=GND}
+C {devices/gnd.sym} 1057.5 340 0 0 {name=l6 lab=GND}
+C {devices/vsource.sym} 1057.5 290 0 0 {name=VCONT value="dc \{VCONT\}"}
+C {variable_delay.sym} 1040 120 0 0 {name=x1}

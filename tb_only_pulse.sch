@@ -1,9 +1,8 @@
-v {xschem version=3.4.8RC file_version=1.2}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {}
 V {}
 S {}
-F {}
 E {}
 N 791.25 -480 791.25 -450 {lab=VOUT}
 N 791.25 -387.5 791.25 -347.5 {lab=GND}
@@ -69,7 +68,6 @@ value="
 C {devices/lab_pin.sym} 847.5 -480 2 0 {name=p8 sig_type=std_logic lab=VOUT}
 C {devices/gnd.sym} 620 -352.5 0 0 {name=l1 lab=GND}
 C {devices/gnd.sym} 791.25 -348.75 0 0 {name=l2 lab=GND}
-C {/foss/designs/DLL/others/inv.sym} 530 -340 0 0 {name=x1}
 C {devices/gnd.sym} 171.25 -470 0 0 {name=l3 lab=GND}
 C {devices/vsource.sym} 590 -598.75 1 0 {name=Vdd1 value=1.2}
 C {devices/gnd.sym} 545 -598.75 0 0 {name=l4 lab=GND}

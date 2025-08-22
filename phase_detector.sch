@@ -1,9 +1,8 @@
-v {xschem version=3.4.8RC file_version=1.2}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {}
 V {}
 S {}
-F {}
 E {}
 N 540 85 540 155 {lab=#net1}
 N 695 75 695 85 {lab=#net1}
@@ -146,7 +145,7 @@ N 1300 410 1395 410 {lab=VDD}
 N 1395 560 1395 705 {lab=VSS}
 N 1225 705 1395 705 {lab=VSS}
 N 1105 565 1165 565 {lab=CK_REF}
-N 1445 525 1520 525 {lab=#net16}
+N 1445 525 1520 525 {lab=DN}
 N 495 505 510 505 {lab=VDD}
 N 495 475 510 475 {lab=VDD}
 N 510 475 510 505 {lab=VDD}
@@ -338,12 +337,6 @@ C {lab_pin.sym} 405 535 0 0 {name=p10 sig_type=std_logic lab=CK_IN}
 C {lab_pin.sym} 400 645 0 0 {name=p11 sig_type=std_logic lab=CK_REF}
 C {lab_pin.sym} 1105 565 0 0 {name=p24 sig_type=std_logic lab=CK_REF}
 C {lab_pin.sym} 1150 -40 0 0 {name=p19 sig_type=std_logic lab=CK_IN}
-C {/foss/designs/DLL/others/inv_1_manual.sym} 860 -130 0 0 {name=x1}
-C {/foss/designs/DLL/others/inv_1_manual.sym} 990 -130 0 0 {name=x7}
-C {/foss/designs/DLL/others/inv_1_manual.sym} 815 475 0 0 {name=x2}
-C {/foss/designs/DLL/others/inv_1_manual.sym} 945 475 0 0 {name=x8}
-C {/foss/designs/DLL/others/inv_1_manual.sym} 1395 405 0 0 {name=x3}
-C {/foss/designs/DLL/others/inv_1_manual.sym} 1440 -200 0 0 {name=x4}
 C {devices/lab_pin.sym} 495 865 3 0 {name=p27 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} 815 645 3 0 {name=p8 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} 945 655 3 0 {name=p14 sig_type=std_logic lab=VSS}
@@ -360,3 +353,9 @@ C {devices/lab_pin.sym} 540 430 1 0 {name=p29 sig_type=std_logic lab=VDD}
 C {devices/lab_pin.sym} 815 525 1 0 {name=p30 sig_type=std_logic lab=VDD}
 C {devices/lab_pin.sym} 945 525 1 0 {name=p31 sig_type=std_logic lab=VDD}
 C {devices/lab_pin.sym} 1205 395 1 0 {name=p32 sig_type=std_logic lab=VDD}
+C {/home/designer/shared/UNIC-CASS-Aug25/others/inv_1_manual.sym} 815 475 0 0 {name=x1}
+C {/home/designer/shared/UNIC-CASS-Aug25/others/inv_1_manual.sym} 945 475 0 0 {name=x2}
+C {/home/designer/shared/UNIC-CASS-Aug25/others/inv_1_manual.sym} 1395 405 0 0 {name=x3}
+C {/home/designer/shared/UNIC-CASS-Aug25/others/inv_1_manual.sym} 1440 -200 0 0 {name=x4}
+C {/home/designer/shared/UNIC-CASS-Aug25/others/inv_1_manual.sym} 990 -130 0 0 {name=x5}
+C {/home/designer/shared/UNIC-CASS-Aug25/others/inv_1_manual.sym} 860 -130 0 0 {name=x6}
