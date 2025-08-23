@@ -269,7 +269,7 @@ lab=VoutQB3}
 N 3450 -350 3450 -310 {lab=v1}
 N 3480 -350 3480 -310 {lab="v1, v1"}
 N 3800 -470 3830 -470 {
-lab=Vout_Q}
+lab=Vout_QBI}
 C {devices/code_shown.sym} 2120 -2170 0 0 {name=NGSPICE only_toplevel=true 
 value="
 .param temp=27
