@@ -37,11 +37,7 @@ x1 net1 GND net2 out in variable_delay_line
 *.opin VOUT
 *.ipin VCONT
 x1 VDD VIN net1 VCONT VSS variable_delay
-x2 VDD net1 net5 VCONT VSS variable_delay
-x3 VDD net5 net4 VCONT VSS variable_delay
-x4 VDD net4 net3 VCONT VSS variable_delay
-x5 VDD net3 net2 VCONT VSS variable_delay
-x6 VDD net2 VOUT VCONT VSS variable_delay
+x2 VDD net1 VOUT VCONT VSS variable_delay
 .ends
 
 
