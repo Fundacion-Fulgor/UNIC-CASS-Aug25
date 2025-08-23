@@ -30,7 +30,7 @@ C {devices/iopin.sym} 270 -130 2 0 {name=p5 lab=VOUT}
 C {devices/iopin.sym} 170 -170 2 0 {name=p1 lab=VCC}
 C {devices/iopin.sym} 170 -130 2 0 {name=p2 lab=VSS}
 C {sg13g2_stdcells/sg13g2_dlygate4sd3_1.sym} 190 -70 0 0 {name=x1[0:3] VDD=VCC VSS=VSS prefix=sg13g2_ spice_ignore=true}
-C {devices/lab_pin.sym} -70 90 0 0 {name=p3 sig_type=std_logic lab=VIN}
+C {devices/lab_pin.sym} -60 90 0 0 {name=p3 sig_type=std_logic lab=VIN}
 C {devices/lab_pin.sym} 535 90 0 1 {name=p8 sig_type=std_logic lab=VOUT}
 C {sg13g2_stdcells/sg13g2_dlygate4sd1_1.sym} 130 90 0 0 {name=x1 VDD=VCC VSS=VSS prefix=sg13g2_ }
 C {sg13g2_stdcells/sg13g2_dlygate4sd1_1.sym} 120 180 0 0 {name=x2 VDD=VCC VSS=VSS prefix=sg13g2_ }

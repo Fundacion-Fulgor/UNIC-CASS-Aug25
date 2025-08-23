@@ -12,8 +12,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-1.0797238e-09
-x2=1.634226e-08
+x1=-3.6930214e-09
+x2=1.3728963e-08
 divx=5
 subdivx=1
 
@@ -35,8 +35,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-1.0797238e-09
-x2=1.634226e-08
+x1=-3.6930214e-09
+x2=1.3728963e-08
 divx=5
 subdivx=1
 
@@ -75,11 +75,6 @@ C {devices/launcher.sym} 1526.25 23.75 0 0 {name=h3
 descr="Simulate" 
 tclcommand="xschem save; xschem netlist; xschem simulate"
 }
-C {devices/code_shown.sym} 850 390 0 0 {name=MODEL only_toplevel=true
-format="tcleval( @value )"
-value="
-.lib cornerMOSlv.lib mos_tt
-"}
 C {devices/code_shown.sym} 1457.5 90 0 0 {name=NGSPICE only_toplevel=true 
 value="
 .param temp=27
@@ -116,3 +111,18 @@ C {devices/gnd.sym} 1312.5 232.5 0 0 {name=l8 lab=GND}
 C {devices/gnd.sym} 1057.5 340 0 0 {name=l6 lab=GND}
 C {devices/vsource.sym} 1057.5 290 0 0 {name=VCONT value="dc \{VCONT\}"}
 C {/foss/designs/UNIC-CASS-Aug25/sch/delay_variable/delay_variable.sym} 1040 120 0 0 {name=x1}
+C {devices/code_shown.sym} 800 450 0 0 {name=MODEL1 only_toplevel=true
+format="tcleval( @value )"
+value="
+
+.param corner=0
+
+.if (corner==0)
+.lib $::SG13G2_MODELS/cornerMOSlv.lib mos_tt
+.lib $::SG13G2_MODELS/cornerMOSlv.lib mos_tt
+.lib $::SG13G2_MODELS/cornerRES.lib res_typ
+.lib $::SG13G2_MODELS/cornerCAP.lib cap_typ
+.endif
+
+.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+"}

@@ -92,7 +92,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_pmos.sym} -150 -290 0 1 {name=M4
 l=0.13u
-w=2.24*1u
+w=2.24u
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -100,7 +100,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_pmos.sym} 60 -290 0 0 {name=M6
 l=2u
-w=4*1u
+w=4u
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -109,7 +109,7 @@ spiceprefix=X
 C {devices/ipin.sym} 0 -131.25 0 0 {name=p1 lab=VIN_D}
 C {sg13g2_pr/sg13_lv_pmos.sym} 60 -180 0 0 {name=M7
 l=2u
-w=4*5u
+w=4u
 ng=4
 m=1
 model=sg13_lv_pmos

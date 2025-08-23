@@ -1,13 +1,13 @@
 ** sch_path: /foss/designs/UNIC-CASS-Aug25/sch/DLL/DLL_tb.sch
 **.subckt DLL_tb
 Vdd1 VDD GND 1.2
-C4 net2 VSS 100f m=1
-VIN3 net1 GND PULSE(0 1.2 0 5p 5p 1n 2n)
+C4 vin2 VSS 100f m=1
+VIN3 vin1 GND PULSE(0 1.2 0 5p 5p 1n 2n)
 Vss1 VSS GND 0
-x4 VDD VSS va net2 large_delay_vto1p1
-x1 VDD net1 va vc VSS delay_variable
+x4 VDD VSS va vin2 large_delay_vto1p1
+x1 VDD vin1 va vc VSS delay_variable
 x3 vup vc vdn push_pull
-x2 net2 vup net1 vdn phase_detector
+x2 vin2 vup vin1 vdn phase_detector
 **** begin user architecture code
 
 

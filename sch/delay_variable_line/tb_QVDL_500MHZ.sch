@@ -70,7 +70,7 @@ value="
 .control
 run
 plot v(vin1) v(vout) 
-
+plot v(vout) 
 *plot v(vgate) 
 *plot v(vout)
 *meas tran teval WHEN v(vout) = 0.63
@@ -82,12 +82,6 @@ plot v(vin1) v(vout)
 C {devices/lab_pin.sym} 1560 -820 1 0 {name=p1 sig_type=std_logic lab=vin1}
 C {devices/lab_pin.sym} 1700 -820 1 0 {name=p2 sig_type=std_logic lab=vgate}
 C {devices/vsource.sym} 1760 -950 1 0 {name=Vdd1 value=1.2}
-C {devices/code_shown.sym} 1355 -1105 0 0 {name=MODEL only_toplevel=true
-format="tcleval( @value )"
-value="
-.lib cornerMOSlv.lib mos_tt
-.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
-"}
 C {devices/gnd.sym} 1810 -725 0 0 {name=l3 lab=GND}
 C {devices/gnd.sym} 1700 -920 0 0 {name=l4 lab=GND}
 C {devices/gnd.sym} 2382.5 -687.5 0 0 {name=l8 lab=GND}
@@ -117,3 +111,18 @@ spice_ignore=true}
 C {devices/gnd.sym} 1970 -580 0 0 {name=l7 lab=GND}
 C {/foss/designs/UNIC-CASS-Aug25/sch/large_delay_vto1p1/large_delay_vto1p1.sym} 2110 -800 0 0 {name=x2}
 C {/foss/designs/UNIC-CASS-Aug25/sch/delay_variable/delay_variable.sym} 1830 -800 0 0 {name=x1}
+C {devices/code_shown.sym} 1500 -430 0 0 {name=MODEL1 only_toplevel=true
+format="tcleval( @value )"
+value="
+
+.param corner=0
+
+.if (corner==0)
+.lib $::SG13G2_MODELS/cornerMOSlv.lib mos_tt
+.lib $::SG13G2_MODELS/cornerMOSlv.lib mos_tt
+.lib $::SG13G2_MODELS/cornerRES.lib res_typ
+.lib $::SG13G2_MODELS/cornerCAP.lib cap_typ
+.endif
+
+.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+"}

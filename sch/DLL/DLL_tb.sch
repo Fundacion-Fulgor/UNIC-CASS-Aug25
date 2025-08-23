@@ -8,33 +8,33 @@ N 310 -1280 370 -1280 {
 lab=GND}
 N 430 -1280 470 -1280 {lab=VDD}
 N 160 -1130 160 -1120 {
-lab=#net1}
+lab=vin1}
 N 340 -1130 410 -1130 {
-lab=#net1}
+lab=vin1}
 N 490 -1080 490 -1020 {lab=vc}
 N 970 -1050 970 -1030 {lab=VSS}
-N 970 -1130 970 -1110 {lab=#net2}
+N 970 -1130 970 -1110 {lab=xxx}
 N 808.75 -1280 808.75 -1170 {lab=VDD}
-N 930 -1130 970 -1130 {lab=#net2}
+N 930 -1130 970 -1130 {lab=xxx}
 N 582.5 -1195 582.5 -1130 {lab=va}
 N 450 -1080 450 -1055 {lab=VSS}
 N 160 -1060 160 -1020 {lab=GND}
 N 582.5 -1130 630 -1130 {lab=va}
 N 470 -1280 808.75 -1280 {lab=VDD}
 N 490 -1020 610 -1020 {lab=vc}
-N 1120 -1130 1120 -550 {lab=#net2}
+N 1120 -1130 1120 -550 {lab=xxx}
 N 470 -1280 470 -1180 {lab=VDD}
 N 530 -1130 582.5 -1130 {lab=va}
 N 135 -777.5 135 -717.5 {
 lab=GND}
 N 135 -877.5 135 -837.5 {lab=VSS}
-N 510 -550 1120 -550 {lab=#net2}
-N 340 -550 480 -550 {lab=#net1}
+N 510 -550 1120 -550 {lab=xxx}
+N 340 -550 480 -550 {lab=vin1}
 N 462.5 -817.5 480 -817.5 {lab=vup}
 N 510 -777.5 546.25 -777.5 {lab=vdn}
-N 340 -1130 340 -550 {lab=#net1}
+N 340 -1130 340 -550 {lab=vin1}
 N 160 -1130 340 -1130 {
-lab=#net1}
+lab=vin1}
 N 480 -817.5 480 -758.75 {lab=vup}
 N 510 -777.5 510 -757.5 {lab=vdn}
 N 510 -863.75 510 -777.5 {lab=vdn}
@@ -42,13 +42,17 @@ N 490 -1020 490 -980 {lab=vc}
 N 810 -1090 810 -1070 {lab=VSS}
 N 1030 -1030 1030 -1010 {lab=VSS}
 N 970 -1030 1030 -1030 {lab=VSS}
-N 1030 -1130 1120 -1130 {lab=#net2}
+N 1030 -1130 1120 -1130 {lab=xxx}
 N 1030 -1050 1030 -1030 {lab=VSS}
-N 1030 -1130 1030 -1110 {lab=#net2}
-N 970 -1130 1030 -1130 {lab=#net2}
+N 1030 -1130 1030 -1110 {lab=xxx}
+N 970 -1130 1030 -1130 {lab=xxx}
 N 480 -863.75 480 -817.5 {lab=vup}
-N 480 -600 480 -550 {lab=#net1}
-N 510 -600 510 -550 {lab=#net2}
+N 480 -580 480 -550 {lab=vin1}
+N 510 -580 510 -550 {lab=xxx}
+N 510 -580 540 -580 {lab=xxx}
+N 510 -600 510 -580 {lab=xxx}
+N 450 -580 480 -580 {lab=vin1}
+N 480 -600 480 -580 {lab=vin1}
 C {devices/code_shown.sym} 1215 -1077.5 0 0 {name=s1 only_toplevel=false 
 value="
 .save v(vin1) v(vin2)  v(vc) v(vdn) v(vup)
@@ -73,12 +77,6 @@ plot v(vup) v(vdn)
 *let cap_val = teval/res_val
 *print cap_val
 .endc
-"}
-C {devices/code_shown.sym} 205 -1437.5 0 0 {name=MODEL only_toplevel=true
-format="tcleval( @value )"
-value="
-.lib foss/pdks/ihp-sg13g2/ngspice/models/cornersMOSlv.lib tt
-.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
 "}
 C {devices/vsource.sym} 400 -1280 1 0 {name=Vdd1 value=1.2}
 C {devices/gnd.sym} 310 -1280 1 0 {name=Vdd2 lab=GND
@@ -113,3 +111,21 @@ C {lab_pin.sym} 810 -1070 3 0 {name=p2 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 1030 -1010 3 0 {name=p3 sig_type=std_logic lab=VSS}
 C {vsource.sym} 1030 -1080 0 0 {name=V2 value=3 savecurrent=false
 spice_ignore=true}
+C {devices/code_shown.sym} 190 -1710 0 0 {name=MODEL1 only_toplevel=true
+format="tcleval( @value )"
+value="
+
+.param corner=0
+
+.if (corner==0)
+.lib $::SG13G2_MODELS/cornerMOSlv.lib mos_tt
+.lib $::SG13G2_MODELS/cornerMOSlv.lib mos_tt
+.lib $::SG13G2_MODELS/cornerRES.lib res_typ
+.lib $::SG13G2_MODELS/cornerCAP.lib cap_typ
+.endif
+
+.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+"}
+C {lab_pin.sym} 450 -580 0 0 {name=p5 sig_type=std_logic lab=vin1}
+C {lab_pin.sym} 540 -580 2 0 {name=p6 sig_type=std_logic lab=vin2
+}
