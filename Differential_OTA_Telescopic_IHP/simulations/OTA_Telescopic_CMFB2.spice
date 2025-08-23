@@ -1,0 +1,20 @@
+** sch_path: /foss/designs/Differential_OTA_Telescopic_IHP/OTA_Telescopic_CMFB2.sch
+**.subckt OTA_Telescopic_CMFB2 VDD VREF VINN VINP IBIAS CMFB VSS
+*.iopin VDD
+*.iopin VSS
+*.opin CMFB
+*.ipin VREF
+*.iopin IBIAS
+*.ipin VINP
+*.ipin VINN
+XM0 IBIAS IBIAS VDD VDD sg13_lv_pmos w=6u l=0.7u ng=6 m=8
+XM1 V1 IBIAS VDD VDD sg13_lv_pmos w=6u l=0.7u ng=6 m=24
+XM2 V2 IBIAS VDD VDD sg13_lv_pmos w=6u l=0.7u ng=6 m=24
+XM3 CMFB VINP V1 VDD sg13_lv_pmos w=9u l=0.35u ng=7 m=4
+XM4 net1 VREF V1 VDD sg13_lv_pmos w=9u l=0.35u ng=7 m=4
+XM5 net1 VREF V2 VDD sg13_lv_pmos w=9u l=0.35u ng=7 m=4
+XM6 CMFB VINN V2 VDD sg13_lv_pmos w=9u l=0.35u ng=7 m=4
+XM7 net1 net1 VSS VSS sg13_lv_nmos w=57u l=0.3u ng=50 m=4
+XM8 CMFB CMFB VSS VSS sg13_lv_nmos w=57u l=0.3u ng=50 m=4
+**.ends
+.end

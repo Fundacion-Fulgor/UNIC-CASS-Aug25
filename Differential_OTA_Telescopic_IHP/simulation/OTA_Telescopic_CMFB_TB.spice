@@ -1,0 +1,135 @@
+** sch_path: /foss/designs/Design/xschem/Differential_OTA_Telescopic/OTA_Telescopic_CMFB_TB.sch
+**.subckt OTA_Telescopic_CMFB_TB
+I0 net1 GND 95u
+V1 VDD GND 1.62
+V2 VREF GND 0.9
+V6 net2 net3 0 AC 1
+V7 net2 GND 0.9
+* noconn Vout
+x1 VDD VREF net3 net3 net1 Vout GND OTA_Telescopic_CMFB2
+**** begin user architecture code
+
+** opencircuitdesign pdks install
+.lib /foss/pdks/sky130A/libs.tech/combined/sky130.lib.spice ss
+.temp 125
+
+
+
+
+
+.control
+save all
+
+* AC simulation
+ac dec 10 1 1T
+let Av = db(v(Vout))
+meas ac Ao MAX Av
+let ABW = Ao-3
+meas ac BW WHEN Av=ABW
+meas ac UGBW WHEN Av=0
+let phase_vec = 180/pi*cph(v(Vout))
+
+* Phase margin (PM)
+meas ac phase FIND phase_vec WHEN frequency=UGBW
+let PM = phase+180
+print PM
+
+* Gain margin (GM)
+meas ac freq180 FIND frequency WHEN phase_vec=-180
+meas ac gain FIND Av WHEN frequency=freq180
+let GM = 0-gain
+print GM
+plot Av
+plot phase_vec
+
+
+*DC simulation
+
+op
+let vout_dc = v(Vout1)
+print vout_dc
+write OTA_Telescopic_CMFB_TB.raw
+
+.endc
+
+
+
+
+.op
+
+.save all
+.save @m.x1.xm0.msky130_fd_pr__pfet_01v8_lvt[id]
+
+.save @m.x1.xm1.msky130_fd_pr__pfet_01v8_lvt[id]
+.save @m.x1.xm1.msky130_fd_pr__pfet_01v8_lvt[gm]
+.save @m.x1.xm2.msky130_fd_pr__pfet_01v8_lvt[id]
+.save @m.x1.xm2.msky130_fd_pr__pfet_01v8_lvt[gm]
+
+.save @m.x1.xm3.msky130_fd_pr__pfet_01v8_lvt[id]
+.save @m.x1.xm3.msky130_fd_pr__pfet_01v8_lvt[gm]
+.save @m.x1.xm4.msky130_fd_pr__pfet_01v8_lvt[id]
+.save @m.x1.xm4.msky130_fd_pr__pfet_01v8_lvt[gm]
+.save @m.x1.xm5.msky130_fd_pr__pfet_01v8_lvt[id]
+.save @m.x1.xm5.msky130_fd_pr__pfet_01v8_lvt[gm]
+.save @m.x1.xm6.msky130_fd_pr__pfet_01v8_lvt[id]
+.save @m.x1.xm6.msky130_fd_pr__pfet_01v8_lvt[gm]
+
+.save @m.x1.xm7.msky130_fd_pr__nfet_01v8_lvt[id]
+.save @m.x1.xm7.msky130_fd_pr__nfet_01v8_lvt[gm]
+.save @m.x1.xm8.msky130_fd_pr__nfet_01v8_lvt[id]
+.save @m.x1.xm8.msky130_fd_pr__nfet_01v8_lvt[gm]
+
+.control
+
+*let vdssat_M1 = @m.x1.xm1.msky130_fd_pr__nfet_01v8_lvt[vdsat]
+*let vdssat_M3 = @m.x1.xm3.msky130_fd_pr__nfet_01v8_lvt[vdsat]
+*let vdssat_M5 = @m.x1.xm5.msky130_fd_pr__pfet_01v8_lvt[vdsat]
+*let vdssat_M7 = @m.x1.xm7.msky130_fd_pr__pfet_01v8_lvt[vdsat]
+*let vdssat_M0 = @m.x1.xm0.msky130_fd_pr__nfet_01v8_lvt[vdsat]
+
+*print vdssat_M1
+*print vdssat_M3
+*print vdssat_M5
+*print vdssat_M7
+*print vdssat_M0
+
+.endc
+
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  OTA_Telescopic_CMFB2.sym # of pins=7
+** sym_path: /foss/designs/Design/xschem/Differential_OTA_Telescopic/OTA_Telescopic_CMFB2.sym
+** sch_path: /foss/designs/Design/xschem/Differential_OTA_Telescopic/OTA_Telescopic_CMFB2.sch
+.subckt OTA_Telescopic_CMFB2 VDD VREF VINN VINP IBIAS CMFB VSS
+*.iopin VDD
+*.iopin VSS
+*.opin CMFB
+*.ipin VREF
+*.iopin IBIAS
+*.ipin VINP
+*.ipin VINN
+XM0 IBIAS IBIAS VDD VDD sky130_fd_pr__pfet_01v8_lvt L=0.7 W=6 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4
+XM7 net1 net1 VSS VSS sky130_fd_pr__nfet_01v8_lvt L=0.3 W=55 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4
+XM4 net1 VREF V1 VDD sky130_fd_pr__pfet_01v8_lvt L=0.35 W=8 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=5 m=5
+XM5 net1 VREF V2 VDD sky130_fd_pr__pfet_01v8_lvt L=0.35 W=8 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=5 m=5
+XM3 CMFB VINP V1 VDD sky130_fd_pr__pfet_01v8_lvt L=0.35 W=8 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=5 m=5
+XM6 CMFB VINN V2 VDD sky130_fd_pr__pfet_01v8_lvt L=0.35 W=8 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=5 m=5
+XM1 V1 IBIAS VDD VDD sky130_fd_pr__pfet_01v8_lvt L=0.7 W=6 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4*3 m=4*3
+XM2 V2 IBIAS VDD VDD sky130_fd_pr__pfet_01v8_lvt L=0.7 W=6 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4*3 m=4*3
+XM8 CMFB CMFB VSS VSS sky130_fd_pr__nfet_01v8_lvt L=0.3 W=55 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4
+.ends
+
+.GLOBAL GND
+.end
