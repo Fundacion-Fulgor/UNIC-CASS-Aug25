@@ -1,20 +1,17 @@
-v {xschem version=3.4.8RC file_version=1.2}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {}
 V {}
 S {}
-F {}
 E {}
 N 0 -180 40 -180 { lab=VIN_D}
 N 0 -180 0 -70 { lab=VIN_D}
 N 0 -70 40 -70 { lab=VIN_D}
 N 80 -260 80 -210 { lab=#net1}
 N 80 -180 110 -180 { lab=VDD_D}
-N 80 -70 110 -70 { lab=#net2}
-N 110 -70 110 40 { lab=#net2}
-N 80 -40 80 10 { lab=#net3}
-N 80 80 80 150 {
-lab=#net2}
+N 80 -70 110 -70 { lab=VSS_D}
+N 110 -70 110 40 { lab=VSS_D}
+N 80 -40 80 10 { lab=#net2}
 N 80 -330 80 -320 {
 lab=VDD_D}
 N 80 -330 110 -330 {
@@ -23,30 +20,26 @@ N 110 -290 110 -180 {
 lab=VDD_D}
 N 80 -290 110 -290 {
 lab=VDD_D}
-N 80 80 110 80 {
-lab=#net2}
 N 80 40 110 40 {
-lab=#net2}
+lab=VSS_D}
 N -110 -290 40 -290 {
-lab=#net4}
+lab=#net3}
 N -170 -330 -170 -320 {
 lab=VDD_D}
 N -170 -330 80 -330 {
 lab=VDD_D}
 N -170 -240 -170 10 {
-lab=#net4}
-N -140 80 80 80 {
-lab=#net2}
+lab=#net3}
 N -170 70 -170 80 {
-lab=#net2}
+lab=VSS_D}
 N -170 -240 -110 -240 {
-lab=#net4}
+lab=#net3}
 N -110 -290 -110 -240 {
-lab=#net4}
+lab=#net3}
 N -170 40 -140 40 {
-lab=#net2}
+lab=VSS_D}
 N -140 40 -140 80 {
-lab=#net2}
+lab=VSS_D}
 N -210 0 -210 40 {
 lab=VCONT_D}
 N -210 0 40 0 {
@@ -57,26 +50,27 @@ N -200 -290 -170 -290 {
 lab=VDD_D}
 N 110 -330 110 -290 {
 lab=VDD_D}
-N 80 70 80 80 {
-lab=#net2}
 N -170 -260 -170 -240 {
-lab=#net4}
+lab=#net3}
 N -130 -290 -110 -290 {
-lab=#net4}
+lab=#net3}
 N -170 80 -140 80 {
-lab=#net2}
+lab=VSS_D}
 N -260 40 -210 40 {lab=VCONT_D}
 N -200 -330 -200 -290 {lab=VDD_D}
 N -200 -330 -170 -330 {lab=VDD_D}
 N 20 -390 80 -390 {lab=VDD_D}
 N 80 -390 80 -330 {lab=VDD_D}
-N 30 150 80 150 {lab=#net2}
 N 110 40 110 80 {
-lab=#net2}
+lab=VSS_D}
 N 80 -130 80 -100 { lab=VOUT_D}
 N 80 -130 225 -130 {lab=VOUT_D}
 N 80 -150 80 -130 { lab=VOUT_D}
-C {devices/iopin.sym} 28.75 150 2 0 {name=p13 sig_type=std_logic lab=VSS_D}
+N 80 80 110 80 {lab=VSS_D}
+N 80 70 80 80 {lab=VSS_D}
+N -140 80 80 80 {lab=VSS_D}
+N 80 80 80 140 {lab=VSS_D}
+N 60 140 80 140 {lab=VSS_D}
 C {devices/iopin.sym} 20 -390 2 0 {name=p17 sig_type=std_logic lab=VDD_D}
 C {devices/opin.sym} 223.75 -130 0 0 {name=p5 lab=VOUT_D}
 C {devices/ipin.sym} -260 40 0 0 {name=p8 lab=VCONT_D}
@@ -129,3 +123,4 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
+C {iopin.sym} 60 140 2 0 {name=p2 lab=VSS_D}

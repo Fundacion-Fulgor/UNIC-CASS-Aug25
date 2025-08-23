@@ -1,9 +1,8 @@
-v {xschem version=3.4.8RC file_version=1.2}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {}
 V {}
 S {}
-F {}
 E {}
 L 4 1360 -1000 1360 -480 {}
 L 4 1360 -480 2460 -480 {}
@@ -50,8 +49,6 @@ N 1830 -950 2168.75 -950 {lab=#net1}
 N 1970 -600 1970 -580 {lab=GND}
 N 1970 -690 1970 -660 {lab=vc}
 N 1850 -690 1970 -690 {lab=vc}
-C {/foss/designs/DLL/variable_delay.sym} 1830 -800 0 0 {name=x1
-}
 C {devices/res.sym} 1630 -800 1 0 {name=R1
 value=0k
 footprint=1206
@@ -113,9 +110,10 @@ tclcommand="xschem save; xschem netlist; xschem simulate"
 }
 C {devices/vsource.sym} 1520 -760 0 0 {name=VIN1 value="PULSE(0 1.2 0 1p 1p 1n 2n)"}
 C {devices/gnd.sym} 1520 -690 0 0 {name=l5 lab=GND}
-C {/foss/designs/UCU/uniccass-icdesign-tools/shared_xserver/OS_AnalogIC_UCU_July2025/Day3/large_delay/large_delay_vto1p1.sym} 2110 -800 0 0 {name=x9}
 C {devices/gnd.sym} 2170 -760 0 0 {name=l6 lab=GND}
 C {devices/lab_pin.sym} 1942.5 -865 1 0 {name=p5 sig_type=std_logic lab=va}
 C {devices/vsource.sym} 1970 -630 0 0 {name=Vdd4 value=0
 spice_ignore=true}
 C {devices/gnd.sym} 1970 -580 0 0 {name=l7 lab=GND}
+C {/foss/designs/UNIC-CASS-Aug25/sch/large_delay_vto1p1/large_delay_vto1p1.sym} 2110 -800 0 0 {name=x2}
+C {/foss/designs/UNIC-CASS-Aug25/sch/delay_variable/delay_variable.sym} 1830 -800 0 0 {name=x1}

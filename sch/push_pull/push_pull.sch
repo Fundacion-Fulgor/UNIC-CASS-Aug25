@@ -104,13 +104,9 @@ N 160 -235 160 -205 {lab=VSS}
 N 80 -235 160 -235 {lab=VSS}
 N 980 -585 980 -535 {lab=VC}
 N 920 -585 980 -585 {lab=VC}
-N 420 45 440 45 {lab=UP_IN}
-N 420 -125 440 -125 {lab=DN_IN}
 N 470 -25 470 15 {lab=VDD}
 N 470 -95 470 -65 {lab=VSS}
 N 470 -195 470 -155 {lab=VDD}
-N 520 45 550 45 {lab=UPB}
-N 520 -125 540 -125 {lab=DNB}
 N 1116.25 -535 1147.5 -535 {lab=VC}
 N 1116.25 -535 1116.25 -480 {lab=VC}
 N 980 -535 1116.25 -535 {lab=VC}
@@ -118,6 +114,10 @@ N 130 -295 160 -295 {lab=VDD}
 N 672.5 -275 730 -275 {lab=VDD}
 N 1116.25 -421.25 1116.25 -375 {lab=VSS}
 N 470 80 470 110 {lab=VSS}
+N 420 50 440 50 {lab=UP_IN}
+N 520 50 540 50 {lab=UPB}
+N 520 -120 540 -120 {lab=DNB}
+N 420 -120 440 -120 {lab=DN_IN}
 C {sg13g2_pr/sg13_lv_nmos.sym} 50 -405 0 0 {name=M1
 l=0.45u
 w=0.3u
@@ -235,16 +235,9 @@ C {lab_pin.sym} 30 -405 0 0 {name=p4 sig_type=std_logic lab=DN_IN
 C {lab_pin.sym} 270 -405 0 0 {name=p5 sig_type=std_logic lab=DNB}
 C {lab_pin.sym} 560 -405 0 0 {name=p6 sig_type=std_logic lab=UPB}
 C {lab_pin.sym} 880 -405 0 0 {name=p7 sig_type=std_logic lab=UP_IN}
-C {ipin.sym} 420 -125 0 0 {name=p10 lab=DN_IN}
-C {ipin.sym} 420 45 0 0 {name=p11 lab=UP_IN
-}
 C {lab_pin.sym} 470 -195 2 0 {name=p12 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} 470 -65 2 0 {name=p14 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 470 105 2 0 {name=p16 sig_type=std_logic lab=VSS}
-C {lab_pin.sym} 550 45 2 0 {name=p18 sig_type=std_logic lab=UPB}
-C {lab_pin.sym} 540 -125 2 0 {name=p19 sig_type=std_logic lab=DNB}
-C {/foss/designs/UNIC-CASS-Aug25/sym/inv_1_manual/inv_1_manual.sym} 470 -245 0 0 {name=x1}
-C {/foss/designs/UNIC-CASS-Aug25/sym/inv_1_manual/inv_1_manual.sym} 470 -75 0 0 {name=x2}
 C {lab_pin.sym} 160 -205 3 0 {name=p20 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 470 -25 2 0 {name=p21 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} 0 -675 1 0 {name=p22 sig_type=std_logic lab=VDD}
@@ -258,3 +251,9 @@ device="ceramic capacitor"
 C {lab_pin.sym} 1116.25 -375 3 0 {name=p24 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 130 -295 1 0 {name=p1 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} 672.5 -275 1 0 {name=p2 sig_type=std_logic lab=VDD}
+C {/foss/designs/UNIC-CASS-Aug25/sch/inv_1_manual/inv_1_manual.sym} 470 -240 0 0 {name=x1}
+C {/foss/designs/UNIC-CASS-Aug25/sch/inv_1_manual/inv_1_manual.sym} 470 -70 0 0 {name=x2}
+C {ipin.sym} 420 50 0 0 {name=p3 lab=UP_IN}
+C {ipin.sym} 420 -120 0 0 {name=p11 lab=DN_IN}
+C {lab_pin.sym} 540 -120 2 0 {name=p10 sig_type=std_logic lab=DNB}
+C {lab_pin.sym} 540 50 2 0 {name=p9 sig_type=std_logic lab=UPB}

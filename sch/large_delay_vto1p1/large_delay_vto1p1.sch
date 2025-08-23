@@ -1,27 +1,26 @@
-v {xschem version=3.4.8RC file_version=1.2}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {}
 V {}
 S {}
-F {}
 E {}
 N 40 90 90 90 {lab=VIN}
 N 40 180 80 180 {lab=VIN}
 N 40 90 40 180 {lab=VIN}
 N -70 90 40 90 {lab=VIN}
-N 160 180 270 180 {lab=VOUT}
-N 270 90 270 180 {lab=VOUT}
-N 170 90 270 90 {lab=VOUT}
+N 160 180 270 180 {lab=#net1}
+N 270 90 270 180 {lab=#net1}
+N 170 90 270 90 {lab=#net1}
 N 40 280 90 280 {lab=VIN}
 N 40 180 40 280 {lab=VIN}
-N 170 280 270 280 {lab=VOUT}
-N 270 180 270 280 {lab=VOUT}
+N 170 280 270 280 {lab=#net1}
+N 270 180 270 280 {lab=#net1}
 N 40 370 100 370 {lab=VIN}
 N 40 280 40 370 {lab=VIN}
-N 180 370 270 370 {lab=VOUT}
-N 270 280 270 370 {lab=VOUT}
-N 270 90 370 90 {lab=VOUT}
-N 450 90 535 90 {lab=VOUT}
+N 180 370 270 370 {lab=#net1}
+N 270 280 270 370 {lab=#net1}
+N 270 90 370 90 {lab=#net1}
+N 450 90 540 90 {lab=VOUT}
 C {devices/lab_pin.sym} 90 -70 0 0 {name=p6 sig_type=std_logic lab=VIN,n1,n2,n3
 spice_ignore=true}
 C {devices/lab_pin.sym} 330 -70 0 1 {name=p7 sig_type=std_logic lab=n1,n2,n3,VOUT
@@ -37,4 +36,4 @@ C {sg13g2_stdcells/sg13g2_dlygate4sd1_1.sym} 130 90 0 0 {name=x1 VDD=VCC VSS=VSS
 C {sg13g2_stdcells/sg13g2_dlygate4sd1_1.sym} 120 180 0 0 {name=x2 VDD=VCC VSS=VSS prefix=sg13g2_ }
 C {sg13g2_stdcells/sg13g2_dlygate4sd1_1.sym} 130 280 0 0 {name=x3 VDD=VCC VSS=VSS prefix=sg13g2_ }
 C {sg13g2_stdcells/sg13g2_dlygate4sd1_1.sym} 140 370 0 0 {name=x4 VDD=VCC VSS=VSS prefix=sg13g2_ }
-C {sg13g2_stdcells/sg13g2_dlygate4sd3_1.sym} 410 90 0 0 {name=x5 VDD=VCC VSS=VSS prefix=sg13g2_ spice_ignore=short}
+C {sg13g2_stdcells/sg13g2_dlygate4sd3_1.sym} 410 90 0 0 {name=x5 VDD=VCC VSS=VSS prefix=sg13g2_ }
