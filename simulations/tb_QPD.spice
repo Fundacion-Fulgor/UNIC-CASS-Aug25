@@ -1,0 +1,126 @@
+** sch_path: /foss/designs/UNIC-CASS-Aug25/sch/phase_detector/tb_QPD.sch
+**.subckt tb_QPD
+VIN1 vin1 GND PULSE(0 1.2 0 1p 1p 1n 2n)
+x2 vin2 vup vin1 vdn phase_detector
+VIN2 vin2 GND PULSE(0 1.2 1.0n 1p 1p 1n 2n)
+x3 vup vc vdn push_pull
+C1 vc GND 100f m=1
+Vss1 VSS GND 0
+Vdd1 VDD GND 1.2
+**** begin user architecture code
+
+
+.save v(vin1) v(vin2) v(vup) v(vdn) v(vc)
+
+
+
+.tran 2p 10n
+.save all
+*.ic v(vout) = 0
+.control
+run
+*plot v(vin1) v(vin2)
+plot v(vup) v(vdn) v(vc)
+
+*plot v(vin2)
+
+*plot v(vout)
+*meas tran teval WHEN v(vout) = 0.63
+*let res_val = 1000
+*let cap_val = teval/res_val
+*print cap_val
+.endc
+
+
+
+
+.param corner=0
+
+.if (corner==0)
+.lib /foss/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib mos_tt
+.lib /foss/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib mos_tt
+.lib /foss/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerRES.lib res_typ
+.lib /foss/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerCAP.lib cap_typ
+.endif
+
+.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  /foss/designs/DLL/phase_detector.sym # of pins=4
+** sym_path: /foss/designs/DLL/phase_detector.sym
+** sch_path: /foss/designs/DLL/phase_detector.sch
+.subckt phase_detector CK_IN UP CK_REF DN
+*.opin UP
+*.opin DN
+*.ipin CK_IN
+*.ipin CK_REF
+XM7 net2 CK_IN VDD VDD sg13_lv_pmos w=5u l=4u ng=1 m=1
+XM8 net1 CK_IN VDD VDD sg13_lv_pmos w=5u l=4u ng=1 m=1
+XM9 net2 CK_REF net1 net1 sg13_lv_nmos w=2u l=5u ng=5 m=1
+XM10 net2 DN net1 VSS sg13_lv_nmos w=2u l=5u ng=5 m=1
+XM11 net1 CK_IN VSS VSS sg13_lv_nmos w=2u l=5u ng=5 m=1
+XM6 net7 net6 VDD VDD sg13_lv_pmos w=5u l=4u ng=1 m=1
+XM12 net7 CK_IN net8 net9 sg13_lv_nmos w=2u l=5u ng=5 m=1
+XM13 net8 net6 net9 net9 sg13_lv_nmos w=2u l=5u ng=5 m=1
+XM14 net8 net6 VDD VDD sg13_lv_pmos w=5u l=4u ng=1 m=1
+XM1 net11 CK_IN VDD VDD sg13_lv_pmos w=5u l=4u ng=1 m=1
+XM2 net10 CK_IN VDD VDD sg13_lv_pmos w=5u l=4u ng=1 m=1
+XM3 net11 CK_REF net10 net10 sg13_lv_nmos w=2u l=5u ng=5 m=1
+XM4 net11 UP net10 VSS sg13_lv_nmos w=2u l=5u ng=5 m=1
+XM5 net10 CK_IN VSS VSS sg13_lv_nmos w=2u l=5u ng=5 m=1
+XM15 net14 net13 VDD VDD sg13_lv_pmos w=5u l=4u ng=1 m=1
+XM16 net14 CK_REF net15 VSS sg13_lv_nmos w=2u l=5u ng=5 m=1
+XM17 net15 net13 VSS VSS sg13_lv_nmos w=2u l=5u ng=5 m=1
+XM18 net15 net13 VDD VDD sg13_lv_pmos w=5u l=4u ng=1 m=1
+x1 VDD net2 net3 net5 inv_1_manual
+x7 VDD net3 net6 net4 inv_1_manual
+x2 VDD net11 net12 VSS inv_1_manual
+x8 VDD net12 net13 VSS inv_1_manual
+x3 VDD net14 DN VSS inv_1_manual
+x4 VDD net7 UP net9 inv_1_manual
+.ends
+
+
+* expanding   symbol:  /foss/designs/DLL/push_pull.sym # of pins=3
+** sym_path: /foss/designs/DLL/push_pull.sym
+** sch_path: /foss/designs/DLL/push_pull.sch
+.subckt push_pull UP_IN VC DN_IN
+*.ipin DN_IN
+*.ipin UP_IN
+*.opin VC
+XM1 net1 DN_IN net2 VSS sg13_lv_nmos w=720n l=240n ng=1 m=1
+XM7 net1 net1 VDD VDD sg13_lv_pmos w=2.16u l=240n ng=1 m=1
+x1 VDD DN_IN DNB VSS inv_1_manual
+x2 VDD UP_IN UPB VSS inv_1_manual
+C1 VC VSS 10f m=1
+XM4 net1 net1 VDD VDD sg13_lv_pmos w=2.16u l=240n ng=1 m=1
+XM5 net5 net7 VDD VDD sg13_lv_pmos w=2.16u l=240n ng=1 m=1
+XM8 net5 net7 VDD VDD sg13_lv_pmos w=2.16u l=240n ng=1 m=1
+XM11 net6 net4 VDD VDD sg13_lv_pmos w=2.16u l=240n ng=1 m=1
+XM12 net6 net4 VDD VDD sg13_lv_pmos w=2.16u l=240n ng=1 m=1
+XM13 VC net1 VDD VDD sg13_lv_pmos w=2.16u l=240n ng=1 m=1
+XM14 VC net1 VDD VDD sg13_lv_pmos w=2.16u l=240n ng=1 m=1
+XM2 net7 DNB net2 VSS sg13_lv_nmos w=720n l=240n ng=1 m=1
+XM6 net4 UPB net3 VSS sg13_lv_nmos w=720n l=240n ng=1 m=1
+XM9 VC UP_IN net3 VSS sg13_lv_nmos w=360n l=240n ng=1 m=1
+XM3 net2 VDD VSS VSS sg13_lv_nmos w=720n l=240n ng=1 m=1
+XM10 net3 VDD VSS VSS sg13_lv_nmos w=720n l=240n ng=1 m=1
+.ends
+
+
+* expanding   symbol:  /foss/designs/DLL/others/inv_1_manual.sym # of pins=4
+** sym_path: /foss/designs/DLL/others/inv_1_manual.sym
+** sch_path: /foss/designs/DLL/others/inv_1_manual.sch
+.subckt inv_1_manual VDD_D A Y VSS_D
+*.iopin VDD_D
+*.iopin VSS_D
+*.iopin A
+*.iopin Y
+XM1 Y A VSS_D VSS_D sg13_lv_nmos w=10u l=0.13u ng=1 m=1
+XM2 Y A VDD_D VDD_D sg13_lv_pmos w=10u l=0.13u ng=1 m=1
+.ends
+
+.GLOBAL GND
+.end

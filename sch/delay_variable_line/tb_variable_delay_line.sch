@@ -31,13 +31,13 @@ C {devices/launcher.sym} 1158.75 -488.75 0 0 {name=h3
 descr="Simulate" 
 tclcommand="xschem save; xschem netlist; xschem simulate"
 }
-C {devices/code_shown.sym} 2015 -565 0 0 {name=s1 only_toplevel=false 
+C {devices/code_shown.sym} 2015 -535 0 0 {name=s1 only_toplevel=false 
 value="
 .save v(vin) v(vgate) v(vout) v(va)
 
 
 
-.tran 2p 5n
+.tran 2p 20n
 .save all
 *.ic v(vout) = 0
 .control
@@ -60,15 +60,15 @@ value=100f
 footprint=1206
 device="ceramic capacitor"}
 C {gnd.sym} 1782.5 -175 0 0 {name=l1 lab=GND}
-C {vsource.sym} 1522.5 -175 0 0 {name=V1 value=0.4 savecurrent=false}
+C {vsource.sym} 1522.5 -175 0 0 {name=V1 value=0 savecurrent=false}
 C {gnd.sym} 1522.5 -125 0 0 {name=l2 lab=GND}
 C {gnd.sym} 1432.5 -225 0 0 {name=l3 lab=GND}
 C {res.sym} 1302.5 -295 1 0 {name=R1
-value=1k
+value=0k
 footprint=1206
 device=resistor
 m=1}
-C {vsource.sym} 1202.5 -265 0 0 {name=V5 value=0.4 savecurrent=false}
+C {vsource.sym} 1202.5 -265 0 0 {name=V5 value="PULSE(0 1.2 0 5p 5p 0.5n 1n)" savecurrent=false}
 C {gnd.sym} 1202.5 -225 0 0 {name=l4 lab=GND}
 C {lab_pin.sym} 1362.5 -305 1 0 {name=p2 sig_type=std_logic lab=vgate}
 C {lab_pin.sym} 1242.5 -305 1 0 {name=p3 sig_type=std_logic lab=vin1
@@ -90,3 +90,7 @@ value="
 
 .include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
 "}
+C {devices/launcher.sym} 798.125 -938.75 0 0 {name=h1
+descr="Simulate" 
+tclcommand="xschem save; xschem netlist; xschem simulate"
+}

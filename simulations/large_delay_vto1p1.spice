@@ -4,10 +4,9 @@
 *.iopin VOUT
 *.iopin VCC
 *.iopin VSS
-x1 VIN VCC VSS net1 sg13g2_dlygate4sd1_1
-x2 VIN VCC VSS net1 sg13g2_dlygate4sd1_1
-x3 VIN VCC VSS net1 sg13g2_dlygate4sd1_1
-x4 VIN VCC VSS net1 sg13g2_dlygate4sd1_1
-x5 net1 VCC VSS VOUT sg13g2_dlygate4sd3_1
+x1 VIN VCC VSS VOUT sg13g2_dlygate4sd1_1
+x2 VIN VCC VSS VOUT sg13g2_dlygate4sd1_1
+x3 VIN VCC VSS VOUT sg13g2_dlygate4sd1_1
+x4 VIN VCC VSS VOUT sg13g2_dlygate4sd1_1
 **.ends
 .end

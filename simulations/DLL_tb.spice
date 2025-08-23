@@ -1,13 +1,13 @@
 ** sch_path: /foss/designs/UNIC-CASS-Aug25/sch/DLL/DLL_tb.sch
 **.subckt DLL_tb
 Vdd1 VDD GND 1.2
-C4 net2 VSS 100f m=1
-VIN3 net1 GND PULSE(0 1.2 0 5p 5p 1n 2n)
+C4 vin2 VSS 100f m=1
+VIN3 vin1 GND PULSE(0 1.2 0 5p 5p 1n 2n)
 Vss1 VSS GND 0
-x4 VDD VSS va net2 large_delay_vto1p1
-x1 VDD net1 va vc VSS delay_variable
+x4 VDD VSS va vin2 large_delay_vto1p1
+x1 VDD vin1 va vc VSS delay_variable
 x3 vup vc vdn push_pull
-x2 net2 vup net1 vdn phase_detector
+x2 vin2 vup vin1 vdn phase_detector
 **** begin user architecture code
 
 
@@ -59,11 +59,10 @@ plot v(vup) v(vdn)
 *.iopin VOUT
 *.iopin VCC
 *.iopin VSS
-x1 VIN VCC VSS net1 sg13g2_dlygate4sd1_1
-x2 VIN VCC VSS net1 sg13g2_dlygate4sd1_1
-x3 VIN VCC VSS net1 sg13g2_dlygate4sd1_1
-x4 VIN VCC VSS net1 sg13g2_dlygate4sd1_1
-x5 net1 VCC VSS VOUT sg13g2_dlygate4sd3_1
+x1 VIN VCC VSS VOUT sg13g2_dlygate4sd1_1
+x2 VIN VCC VSS VOUT sg13g2_dlygate4sd1_1
+x3 VIN VCC VSS VOUT sg13g2_dlygate4sd1_1
+x4 VIN VCC VSS VOUT sg13g2_dlygate4sd1_1
 .ends
 
 
@@ -71,17 +70,17 @@ x5 net1 VCC VSS VOUT sg13g2_dlygate4sd3_1
 ** sym_path: /foss/designs/UNIC-CASS-Aug25/sch/delay_variable/delay_variable.sym
 ** sch_path: /foss/designs/UNIC-CASS-Aug25/sch/delay_variable/delay_variable.sch
 .subckt delay_variable VDD_D VIN_D VOUT_D VCONT_D VSS_D
+*.iopin VSS_D
 *.iopin VDD_D
 *.opin VOUT_D
 *.ipin VCONT_D
 *.ipin VIN_D
-*.iopin VSS_D
-XM3 net3 VCONT_D VSS_D VSS_D sg13_lv_nmos w=1u l=0.13u ng=1 m=1
-XM5 net2 VCONT_D VSS_D VSS_D sg13_lv_nmos w=2u l=2u ng=1 m=1
-XM4 net3 net3 VDD_D VDD_D sg13_lv_pmos w=2.24u l=0.13u ng=1 m=1
-XM6 net1 net3 VDD_D VDD_D sg13_lv_pmos w=4u l=2u ng=1 m=1
-XM7 VOUT_D VIN_D net1 VDD_D sg13_lv_pmos w=4u l=2u ng=4 m=1
-XM8 VOUT_D VIN_D net2 VSS_D sg13_lv_nmos w=5u l=3u ng=1 m=1
+XM3 net4 VCONT_D net2 net2 sg13_lv_nmos w=1u l=0.13u ng=1 m=1
+XM5 net3 VCONT_D net2 net2 sg13_lv_nmos w=2u l=2u ng=1 m=1
+XM4 net4 net4 VDD_D VDD_D sg13_lv_pmos w=2.24u l=0.13u ng=1 m=1
+XM6 net1 net4 VDD_D VDD_D sg13_lv_pmos w=4u l=2u ng=1 m=1
+XM7 VOUT_D VIN_D net1 VDD_D sg13_lv_pmos w=20u l=2u ng=4 m=1
+XM8 VOUT_D VIN_D net3 net2 sg13_lv_nmos w=5u l=3u ng=1 m=1
 .ends
 
 

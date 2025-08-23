@@ -8,6 +8,49 @@ L 4 1360 -1000 1360 -480 {}
 L 4 1360 -480 2460 -480 {}
 L 4 2460 -1000 2460 -480 {}
 L 4 1360 -1000 2460 -1000 {}
+B 2 1650 -1560 2450 -1160 {flags=graph
+y1=0
+y2=1.8
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=7.530826e-08
+x2=9.530826e-08
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node="a
+out"
+color="6 7"
+dataset=-1
+unitx=1
+logx=0
+logy=0
+}
+B 2 1650 -1560 2450 -1160 {flags=graph
+y1=0
+y2=1.8
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=7.530826e-08
+x2=9.530826e-08
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node=a
+color=6
+dataset=-1
+unitx=1
+logx=0
+logy=0
+}
 N 1420 -730 1420 -690 {
 lab=GND}
 N 1520 -800 1520 -790 {
@@ -126,3 +169,11 @@ value="
 
 .include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
 "}
+C {devices/launcher.sym} 2000 -1090 0 0 {name=h5
+descr="load waves Ctrl + left click" 
+tclcommand="xschem raw_read $netlist_dir/tran_logic.raw tran"
+}
+C {devices/launcher.sym} 1998.125 -1038.75 0 0 {name=h1
+descr="Simulate" 
+tclcommand="xschem save; xschem netlist; xschem simulate"
+}

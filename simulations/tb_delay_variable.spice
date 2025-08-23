@@ -7,9 +7,6 @@ VCONT net2 net5 dc {VCONT}
 x1 net1 in out net2 GND delay_variable
 **** begin user architecture code
 
-.lib cornerMOSlv.lib mos_tt
-
-
 
 .param temp=27
 .Param VCONT=0.5
@@ -24,12 +21,25 @@ x1 net1 in out net2 GND delay_variable
 .end
 
 
+
+
+.param corner=0
+
+.if (corner==0)
+.lib /foss/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib mos_tt
+.lib /foss/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib mos_tt
+.lib /foss/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerRES.lib res_typ
+.lib /foss/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerCAP.lib cap_typ
+.endif
+
+.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+
 **** end user architecture code
 **.ends
 
-* expanding   symbol:  /foss/designs/UNIC-CASS-Aug25/sym/delay_variable/delay_variable.sym # of pins=5
-** sym_path: /foss/designs/UNIC-CASS-Aug25/sym/delay_variable/delay_variable.sym
-** sch_path: /foss/designs/UNIC-CASS-Aug25/sym/delay_variable/delay_variable.sch
+* expanding   symbol:  /foss/designs/UNIC-CASS-Aug25/sch/delay_variable/delay_variable.sym # of pins=5
+** sym_path: /foss/designs/UNIC-CASS-Aug25/sch/delay_variable/delay_variable.sym
+** sch_path: /foss/designs/UNIC-CASS-Aug25/sch/delay_variable/delay_variable.sch
 .subckt delay_variable VDD_D VIN_D VOUT_D VCONT_D VSS_D
 *.iopin VSS_D
 *.iopin VDD_D

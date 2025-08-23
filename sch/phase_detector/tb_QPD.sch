@@ -46,7 +46,7 @@ value="
 *.ic v(vout) = 0
 .control
 run
-plot v(vin1) v(vin2)
+*plot v(vin1) v(vin2) 
 plot v(vup) v(vdn) v(vc)
 
 *plot v(vin2) 
