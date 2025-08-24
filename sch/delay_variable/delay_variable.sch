@@ -1,8 +1,9 @@
-v {xschem version=3.4.6 file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.2}
 G {}
 K {}
 V {}
 S {}
+F {}
 E {}
 N 50 -160 90 -160 { lab=VIN_D}
 N 50 -160 50 -50 { lab=VIN_D}
@@ -121,8 +122,8 @@ model=sg13_lv_pmos
 spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} 110 -50 0 0 {name=M8
-l=3u
-w=5u
+l=2u
+w=10u
 ng=1
 m=1
 model=sg13_lv_nmos

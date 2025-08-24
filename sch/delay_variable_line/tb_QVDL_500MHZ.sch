@@ -1,8 +1,9 @@
-v {xschem version=3.4.6 file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.2}
 G {}
 K {}
 V {}
 S {}
+F {}
 E {}
 L 4 1360 -1000 1360 -480 {}
 L 4 1360 -480 2460 -480 {}
@@ -107,13 +108,14 @@ value="
 
 
 
-.tran 2p 5n
+.tran 2p 10n
 .save all
 *.ic v(vout) = 0
 .control
 run
+set color0=white
 plot v(vin1) v(vout) 
-plot v(vout) 
+*plot v(vout) 
 *plot v(vgate) 
 *plot v(vout)
 *meas tran teval WHEN v(vout) = 0.63
@@ -129,7 +131,7 @@ C {devices/gnd.sym} 1810 -725 0 0 {name=l3 lab=GND}
 C {devices/gnd.sym} 1700 -920 0 0 {name=l4 lab=GND}
 C {devices/gnd.sym} 2382.5 -687.5 0 0 {name=l8 lab=GND}
 C {devices/gnd.sym} 1850 -580 0 0 {name=l1 lab=GND}
-C {devices/vsource.sym} 1850 -630 0 0 {name=Vdd2 value=0.4
+C {devices/vsource.sym} 1850 -630 0 0 {name=Vdd2 value=-1
 }
 C {devices/lab_pin.sym} 1970 -690 1 0 {name=p3 sig_type=std_logic lab=vc}
 C {devices/lab_pin.sym} 2382.5 -825 1 0 {name=p4 sig_type=std_logic lab=vout}
@@ -154,7 +156,7 @@ spice_ignore=true}
 C {devices/gnd.sym} 1970 -580 0 0 {name=l7 lab=GND}
 C {/foss/designs/UNIC-CASS-Aug25/sch/large_delay_vto1p1/large_delay_vto1p1.sym} 2110 -800 0 0 {name=x2}
 C {/foss/designs/UNIC-CASS-Aug25/sch/delay_variable/delay_variable.sym} 1830 -800 0 0 {name=x1}
-C {devices/code_shown.sym} 1500 -430 0 0 {name=MODEL1 only_toplevel=true
+C {devices/code_shown.sym} 1510 -430 0 0 {name=MODEL1 only_toplevel=true
 format="tcleval( @value )"
 value="
 
@@ -173,7 +175,7 @@ C {devices/launcher.sym} 2000 -1090 0 0 {name=h5
 descr="load waves Ctrl + left click" 
 tclcommand="xschem raw_read $netlist_dir/tran_logic.raw tran"
 }
-C {devices/launcher.sym} 1998.125 -1038.75 0 0 {name=h1
+C {devices/launcher.sym} 1998.125 -1028.75 0 0 {name=h1
 descr="Simulate" 
 tclcommand="xschem save; xschem netlist; xschem simulate"
 }
