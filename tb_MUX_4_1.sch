@@ -251,20 +251,20 @@ C {devices/vsource.sym} 1010 -800 0 0 {name=Vs1 value=0}
 C {devices/gnd.sym} 1010 -710 0 0 {name=l10 lab=GND}
 C {devices/lab_pin.sym} 1010 -870 0 0 {name=p11 sig_type=std_logic lab=v0}
 C {devices/lab_pin.sym} 290 -330 0 0 {name=p3 sig_type=std_logic lab=VDD
-}
+spice_ignore=true}
 C {devices/gnd.sym} 480 -580 0 0 {name=l1 lab=GND}
 C {devices/vsource.sym} 480 -630 0 0 {name=Vin3 value="dc 0 ac 0 pulse(0, 1.2, 250p, 25p, 25p, 225p, 500p ) "}
 C {devices/lab_pin.sym} 460 -720 0 0 {name=p5 sig_type=std_logic lab=vinIB}
 C {devices/gnd.sym} 210 -40 0 0 {name=l2 lab=GND
-}
+spice_ignore=true}
 C {devices/gnd.sym} 480 -390 0 0 {name=l3 lab=GND
 spice_ignore=short}
 C {devices/vsource.sym} 480 -440 0 0 {name=Vin4 value="dc 0 ac 0 pulse(0, 1.2, 375p, 25p, 25p, 225p, 500p ) "}
 C {devices/lab_pin.sym} 460 -530 0 0 {name=p7 sig_type=std_logic lab=vinQB}
 C {devices/lab_pin.sym} 290 -30 2 0 {name=p16 sig_type=std_logic lab="v0, v0"
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 410 -180 2 0 {name=p12 sig_type=std_logic lab=VoutI_
-}
+spice_ignore=true}
 C {devices/code_shown.sym} 60 -1020 0 0 {name=NGSPICE only_toplevel=true 
 value="
 .param temp=27
@@ -300,61 +300,61 @@ C {devices/lab_pin.sym} 1210 -540 2 0 {name=p20 sig_type=std_logic lab=VoutQ}
 C {devices/lab_pin.sym} 1210 -520 2 0 {name=p21 sig_type=std_logic lab=VoutIB}
 C {devices/lab_pin.sym} 1210 -500 2 0 {name=p22 sig_type=std_logic lab=VoutQB}
 C {devices/lab_pin.sym} 150 -240 2 1 {name=p1 sig_type=std_logic lab=VoutI
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 150 -200 2 1 {name=p2 sig_type=std_logic lab=VoutQ
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 150 -160 2 1 {name=p6 sig_type=std_logic lab=VoutIB
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 150 -120 2 1 {name=p9 sig_type=std_logic lab=VoutQB
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 690 -330 0 0 {name=p23 sig_type=std_logic lab=VDD
-}
+spice_ignore=true}
 C {devices/gnd.sym} 610 -40 0 0 {name=l5 lab=GND
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 690 -30 2 0 {name=p24 sig_type=std_logic lab="v0, v1"
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 810 -180 2 0 {name=p25 sig_type=std_logic lab=VoutQ_
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 550 -240 2 1 {name=p27 sig_type=std_logic lab=VoutI
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 550 -200 2 1 {name=p28 sig_type=std_logic lab=VoutQ
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 550 -160 2 1 {name=p29 sig_type=std_logic lab=VoutIB
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 550 -120 2 1 {name=p30 sig_type=std_logic lab=VoutQB
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 1090 -330 0 0 {name=p31 sig_type=std_logic lab=VDD
-}
+spice_ignore=true}
 C {devices/gnd.sym} 1010 -40 0 0 {name=l6 lab=GND
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 1090 -30 2 0 {name=p32 sig_type=std_logic lab="v1, v0"
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 1210 -180 2 0 {name=p33 sig_type=std_logic lab=VoutIB_
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 950 -240 2 1 {name=p34 sig_type=std_logic lab=VoutI
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 950 -200 2 1 {name=p35 sig_type=std_logic lab=VoutQ
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 950 -160 2 1 {name=p36 sig_type=std_logic lab=VoutIB
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 950 -120 2 1 {name=p37 sig_type=std_logic lab=VoutQB
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 1510 -330 0 0 {name=p38 sig_type=std_logic lab=VDD
-}
+spice_ignore=true}
 C {devices/gnd.sym} 1430 -40 0 0 {name=l11 lab=GND
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 1510 -30 2 0 {name=p39 sig_type=std_logic lab="v1, v1"
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 1630 -180 2 0 {name=p40 sig_type=std_logic lab=VoutQB_
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 1370 -240 2 1 {name=p41 sig_type=std_logic lab=VoutI
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 1370 -200 2 1 {name=p42 sig_type=std_logic lab=VoutQ
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 1370 -160 2 1 {name=p43 sig_type=std_logic lab=VoutIB
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 1370 -120 2 1 {name=p44 sig_type=std_logic lab=VoutQB
-}
+spice_ignore=true}
 C {devices/gnd.sym} 1900 -40 0 0 {name=l12 lab=GND
 }
 C {devices/lab_pin.sym} 1980 -30 2 0 {name=p45 sig_type=std_logic lab="v0, v0"
@@ -374,20 +374,20 @@ C {devices/lab_pin.sym} 1960 -30 0 0 {name=p51 sig_type=std_logic lab=v0
 C {devices/lab_pin.sym} 1980 -330 0 0 {name=p59 sig_type=std_logic lab=VDD
 }
 C {MUX_4_1_EN.sym} -70 -20 0 0 {name=x1
-}
+spice_ignore=true}
 C {MUX_4_1_EN.sym} 330 -20 0 0 {name=x3
-}
+spice_ignore=true}
 C {MUX_4_1_EN.sym} 730 -20 0 0 {name=x4
-}
+spice_ignore=true}
 C {MUX_4_1_EN.sym} 1150 -20 0 0 {name=x5
-}
+spice_ignore=true}
 C {MUX_4_1_EN.sym} 1620 -20 0 0 {name=x6
 }
 C {devices/lab_pin.sym} 1490 -30 0 0 {name=p52 sig_type=std_logic lab=v1
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 1070 -30 0 0 {name=p53 sig_type=std_logic lab=v1
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 670 -30 0 0 {name=p54 sig_type=std_logic lab=v1
-}
+spice_ignore=true}
 C {devices/lab_pin.sym} 270 -30 0 0 {name=p55 sig_type=std_logic lab=v1
-}
+spice_ignore=true}

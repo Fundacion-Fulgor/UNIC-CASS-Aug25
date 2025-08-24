@@ -27,8 +27,8 @@ N 780 -1330 820 -1330 {
 lab=VSP}
 C {sg13g2_pr/sg13_lv_nmos.sym} 550 -1330 2 1 {name=M1
 l=0.13u
-w=0.74u
-ng=4
+w=0.15u
+ng=1
 m=1
 model=sg13_lv_nmos
 spiceprefix=X
@@ -38,9 +38,9 @@ C {iopin.sym} 490 -1330 0 1 {name=p3 lab=VSN}
 C {iopin.sym} 570 -1270 0 0 {name=p4 lab=VOUT}
 C {sg13g2_pr/sg13_lv_pmos.sym} 760 -1330 0 1 {name=M2
 l=0.13u
-w=1.45u
-ng=4
-m=1
+w=0.15u
+ng=1
+m=2
 model=sg13_lv_pmos
 spiceprefix=X
 }
