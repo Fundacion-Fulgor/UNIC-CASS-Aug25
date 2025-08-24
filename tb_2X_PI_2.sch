@@ -328,6 +328,7 @@ N 2280 -250 2310 -250 {
 lab=VoutIB3}
 N 2280 -230 2310 -230 {
 lab=VoutQB3}
+<<<<<<< HEAD
 N 4120 -1530 4120 -1500 {lab=VDD}
 N 4120 -1260 4120 -1230 {lab=GND}
 N 3870 -1450 3900 -1450 {
@@ -471,6 +472,23 @@ lab=VoutIB7}
 N 3610 -240 3640 -240 {
 lab=VoutQB7}
 C {devices/code_shown.sym} 1910 -2580 0 0 {name=NGSPICE only_toplevel=true 
+=======
+N 3600 -620 3600 -590 {lab=VDD}
+N 3600 -350 3600 -320 {lab=GND}
+N 3350 -540 3380 -540 {
+lab=VoutI3}
+N 3350 -500 3380 -500 {
+lab=VoutQ3}
+N 3350 -460 3380 -460 {
+lab=VoutIB3}
+N 3350 -420 3380 -420 {
+lab=VoutQB3}
+N 3450 -350 3450 -310 {lab=v1}
+N 3480 -350 3480 -310 {lab="v1, v1"}
+N 3800 -470 3830 -470 {
+lab=Vout_QBI}
+C {devices/code_shown.sym} 2120 -2170 0 0 {name=NGSPICE only_toplevel=true 
+>>>>>>> 904405dad702433a3dee7ca5731cc17b6370112b
 value="
 .param temp=27
 .control
