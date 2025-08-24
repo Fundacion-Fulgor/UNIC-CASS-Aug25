@@ -54,6 +54,7 @@ N 510 -580 540 -580 {lab=vin2}
 N 510 -600 510 -580 {lab=vin2}
 N 450 -580 480 -580 {lab=vin1}
 N 480 -600 480 -580 {lab=vin1}
+N -1580 -1400 -1580 -1290 {lab=VDD}
 C {devices/code_shown.sym} 1215 -1077.5 0 0 {name=s1 only_toplevel=false 
 value="
 .save v(vin1) v(vin2)  v(vc) v(vdn) v(vup)
@@ -68,7 +69,7 @@ run
 plot v(vin1) v(vin2)
 plot v(vc)
 plot v(vup) v(vdn)
-
+plot v(va)
 
 *plot v(vin2) 
 
@@ -130,3 +131,5 @@ value="
 C {lab_pin.sym} 450 -580 0 0 {name=p5 sig_type=std_logic lab=vin1}
 C {lab_pin.sym} 540 -580 2 0 {name=p6 sig_type=std_logic lab=vin2
 }
+C {devices/lab_pin.sym} -1580 -1400 1 0 {name=Vdd11 sig_type=std_logic lab=VDD
+value=1.2}
