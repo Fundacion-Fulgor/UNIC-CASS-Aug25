@@ -1,8 +1,9 @@
-v {xschem version=3.4.6 file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.2}
 G {}
 K {}
 V {}
 S {}
+F {}
 E {}
 N -80 -665 -80 -645 {lab=VDD}
 N 710 -665 880 -665 {lab=VDD}
@@ -114,10 +115,10 @@ N 130 -295 160 -295 {lab=VDD}
 N 672.5 -275 730 -275 {lab=VDD}
 N 1116.25 -421.25 1116.25 -375 {lab=VSS}
 N 470 80 470 110 {lab=VSS}
+N 420 -120 440 -120 {lab=DN_IN}
+N 520 -120 540 -120 {lab=DNB}
 N 420 50 440 50 {lab=UP_IN}
 N 520 50 540 50 {lab=UPB}
-N 520 -120 540 -120 {lab=DNB}
-N 420 -120 440 -120 {lab=DN_IN}
 C {sg13g2_pr/sg13_lv_nmos.sym} 50 -405 0 0 {name=M1
 l=0.45u
 w=0.3u
@@ -247,12 +248,14 @@ m=1
 value=10f
 footprint=1206
 device="ceramic capacitor"
-}
+spice_ignore=true}
 C {lab_pin.sym} 1116.25 -375 3 0 {name=p24 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 130 -295 1 0 {name=p1 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} 672.5 -275 1 0 {name=p2 sig_type=std_logic lab=VDD}
-C {/foss/designs/UNIC-CASS-Aug25/sch/inv_1_manual/inv_1_manual.sym} 470 -240 0 0 {name=x1}
-C {/foss/designs/UNIC-CASS-Aug25/sch/inv_1_manual/inv_1_manual.sym} 470 -70 0 0 {name=x2}
+C {/foss/designs/UNIC-CASS-Aug25/sch/inv_1_manual/inv_1_manual.sym} 470 -240 0 0 {name=x1
+}
+C {/foss/designs/UNIC-CASS-Aug25/sch/inv_1_manual/inv_1_manual.sym} 470 -70 0 0 {name=x2
+}
 C {ipin.sym} 420 50 0 0 {name=p3 lab=UP_IN}
 C {ipin.sym} 420 -120 0 0 {name=p11 lab=DN_IN}
 C {lab_pin.sym} 540 -120 2 0 {name=p10 sig_type=std_logic lab=DNB}

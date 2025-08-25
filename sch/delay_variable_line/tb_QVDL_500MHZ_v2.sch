@@ -87,16 +87,12 @@ N 1810 -750 1810 -725 {lab=GND}
 N 1520 -730 1520 -690 {lab=GND}
 N 1420 -800 1520 -800 {lab=vin1}
 N 1420 -800 1420 -790 {lab=vin1}
+N 1942.5 -800 2002.5 -800 {lab=va}
+N 1890 -800 1942.5 -800 {lab=va}
 N 1830 -950 2168.75 -950 {lab=#net1}
 N 1970 -600 1970 -580 {lab=GND}
 N 1970 -690 1970 -660 {lab=vc}
 N 1850 -690 1970 -690 {lab=vc}
-N 1970 -720 1970 -690 {lab=vc}
-N 1942.5 -800 1990 -800 {lab=va}
-N 1890 -800 1942.5 -800 {lab=va}
-N 2060 -600 2060 -580 {lab=GND}
-N 2060 -690 2060 -660 {lab=vc}
-N 1970 -690 2060 -690 {lab=vc}
 C {devices/res.sym} 1630 -800 1 0 {name=R1
 value=0k
 footprint=1206
@@ -106,23 +102,19 @@ m=1
 C {devices/gnd.sym} 1420 -690 0 0 {name=l2 lab=GND}
 C {devices/vsource.sym} 1420 -760 0 0 {name=V1 value=1 savecurrent=false
 spice_ignore=true}
-C {devices/code_shown.sym} 2605 -995 0 0 {name=s1 only_toplevel=false 
+C {devices/code_shown.sym} 2525 -995 0 0 {name=s1 only_toplevel=false 
 value="
 .save v(vin) v(vgate) v(vout) v(va)
 
 
-.tran 10p 15n
+
+.tran 10p 40n
 .save all
 *.ic v(vout) = 0
-
 .control
 run
 set color0=white
-plot v(vin1) v(vout)
-*xlimit 2n 5n
-.endc
-
-
+plot v(vin1) v(vout) xlimit 0n 40n
 *plot v(vout) 
 *plot v(vgate) 
 *plot v(vout)
@@ -130,7 +122,7 @@ plot v(vin1) v(vout)
 *let res_val = 1000
 *let cap_val = teval/res_val
 *print cap_val
-*.endc
+.endc
 "}
 C {devices/lab_pin.sym} 1560 -820 1 0 {name=p1 sig_type=std_logic lab=vin1}
 C {devices/lab_pin.sym} 1700 -820 1 0 {name=p2 sig_type=std_logic lab=vgate}
@@ -139,31 +131,31 @@ C {devices/gnd.sym} 1810 -725 0 0 {name=l3 lab=GND}
 C {devices/gnd.sym} 1700 -920 0 0 {name=l4 lab=GND}
 C {devices/gnd.sym} 2382.5 -687.5 0 0 {name=l8 lab=GND}
 C {devices/gnd.sym} 1850 -580 0 0 {name=l1 lab=GND}
-C {devices/vsource.sym} 1850 -630 0 0 {name=Vdd2 value=0.5
+C {devices/vsource.sym} 1850 -630 0 0 {name=Vdd2 value=1
 spice_ignore=true}
-C {devices/lab_pin.sym} 1970 -720 1 0 {name=p3 sig_type=std_logic lab=vc}
+C {devices/lab_pin.sym} 1970 -690 1 0 {name=p3 sig_type=std_logic lab=vc}
 C {devices/lab_pin.sym} 2382.5 -825 1 0 {name=p4 sig_type=std_logic lab=vout}
 C {devices/vsource.sym} 2382.5 -755 0 0 {name=Vdd3 value=0
 spice_ignore=true}
 C {devices/capa.sym} 2330 -750 0 0 {name=C1
 m=1
-value=100f
+value=120f
 footprint=1206
 device="ceramic capacitor"
 }
-C {devices/launcher.sym} 2156.25 -606.25 0 0 {name=h3
+C {devices/launcher.sym} 2156.25 -616.25 0 0 {name=h3
 descr="Simulate" 
 tclcommand="xschem save; xschem netlist; xschem simulate"
 }
-C {devices/vsource.sym} 1520 -760 0 0 {name=VIN1 value="PULSE(0 1.2 0 0.5p 0.5p 1n 2n)"}
+C {devices/vsource.sym} 1520 -760 0 0 {name=VIN1 value="PULSE(0 1.2 0 1p 1p 1n 2n)"}
 C {devices/gnd.sym} 1520 -690 0 0 {name=l5 lab=GND}
 C {devices/gnd.sym} 2170 -760 0 0 {name=l6 lab=GND}
 C {devices/lab_pin.sym} 1942.5 -865 1 0 {name=p5 sig_type=std_logic lab=va}
-C {devices/vsource.sym} 1970 -630 0 0 {name=Vdd4 value=0
-}
+C {devices/vsource.sym} 1970 -630 0 0 {name=Vdd4 value=0.8}
+C {devices/gnd.sym} 1970 -580 0 0 {name=l7 lab=GND}
 C {/foss/designs/UNIC-CASS-Aug25/sch/large_delay_vto1p1/large_delay_vto1p1.sym} 2110 -800 0 0 {name=x2}
 C {/foss/designs/UNIC-CASS-Aug25/sch/delay_variable/delay_variable.sym} 1830 -800 0 0 {name=x1}
-C {devices/code_shown.sym} 1420 -410 0 0 {name=MODEL1 only_toplevel=true
+C {devices/code_shown.sym} 1510 -430 0 0 {name=MODEL1 only_toplevel=true
 format="tcleval( @value )"
 value="
 
@@ -182,11 +174,7 @@ C {devices/launcher.sym} 2000 -1090 0 0 {name=h5
 descr="load waves Ctrl + left click" 
 tclcommand="xschem raw_read $netlist_dir/tran_logic.raw tran"
 }
-C {devices/launcher.sym} 2018.125 -1028.75 0 0 {name=h1
+C {devices/launcher.sym} 1998.125 -1028.75 0 0 {name=h1
 descr="Simulate" 
 tclcommand="xschem save; xschem netlist; xschem simulate"
 }
-C {devices/gnd.sym} 1970 -580 0 0 {name=l9 lab=GND}
-C {devices/vsource.sym} 2060 -630 0 0 {name=Vdd5 value=0
-spice_ignore=true}
-C {devices/gnd.sym} 2060 -580 0 0 {name=l7 lab=GND}

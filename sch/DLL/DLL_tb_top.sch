@@ -1,8 +1,9 @@
-v {xschem version=3.4.6 file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.2}
 G {}
 K {}
 V {}
 S {}
+F {}
 E {}
 N -1890 -1250 -1890 -1240 {
 lab=vin1}
@@ -108,7 +109,7 @@ value="
 C {lab_pin.sym} -1710 -1090 1 0 {name=p14 sig_type=std_logic lab=vin1}
 C {lab_pin.sym} -1710 -1000 3 0 {name=p15 sig_type=std_logic lab=vin2
 }
-C {/foss/designs/UNIC-CASS-Aug25/sch/delay_variable_line/variable_delay_line.sym} -1700 -1110 0 0 {name=x2}
+C {/foss/designs/UNIC-CASS-Aug25/sch/delay_variable_line/variable_delay_line.sym} -1490 -1250 0 0 {name=x2}
 C {devices/vsource.sym} -2090 -1180 0 0 {name=Vdd1 value=1.2}
 C {devices/gnd.sym} -2090 -1090 0 0 {name=Vdd2 lab=GND
 value=1.2}

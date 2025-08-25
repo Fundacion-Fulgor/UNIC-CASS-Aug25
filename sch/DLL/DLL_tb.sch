@@ -54,14 +54,13 @@ N 510 -580 540 -580 {lab=vin2}
 N 510 -600 510 -580 {lab=vin2}
 N 450 -580 480 -580 {lab=vin1}
 N 480 -600 480 -580 {lab=vin1}
-N -1580 -1400 -1580 -1290 {lab=VDD}
 C {devices/code_shown.sym} 1215 -1077.5 0 0 {name=s1 only_toplevel=false 
 value="
 .save v(vin1) v(vin2)  v(vc) v(vdn) v(vup)
 
 
 
-.tran 10p 10n
+.tran 10p 20n
 .save all
 *.ic v(vout) = 0
 .control
@@ -88,11 +87,11 @@ value=1.2}
 C {devices/lab_pin.sym} 610 -1020 1 0 {name=p4 sig_type=std_logic lab=vc}
 C {devices/capa.sym} 970 -1080 0 0 {name=C4
 m=1
-value=100f
+value=400f
 footprint=1206
 device="ceramic capacitor"
 }
-C {devices/launcher.sym} 838.125 -838.75 0 0 {name=h1
+C {devices/launcher.sym} 848.125 -828.75 0 0 {name=h1
 descr="Simulate" 
 tclcommand="xschem save; xschem netlist; xschem simulate"
 }
@@ -131,5 +130,3 @@ value="
 C {lab_pin.sym} 450 -580 0 0 {name=p5 sig_type=std_logic lab=vin1}
 C {lab_pin.sym} 540 -580 2 0 {name=p6 sig_type=std_logic lab=vin2
 }
-C {devices/lab_pin.sym} -1580 -1400 1 0 {name=Vdd11 sig_type=std_logic lab=VDD
-value=1.2}
