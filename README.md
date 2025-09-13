@@ -1,2 +1,9 @@
-# UNIC-CASS Postulations by Fundación Fulgor
-This repository indexes all 5 tapeout postulations by Fundación FULGOR's fellows
+# Digital Timing Recovery System with ML-based TED and Polyphase Filters
+## UNIC-CASS Postulation by Fundación Fulgor
+
+### Team Members: 
+* Agustin Arese
+* Juan Ignacio Chirino Bohorquez
+* Juan Tiago Ruiz Rodriguez
+* Juliana Denise Maidana
+
