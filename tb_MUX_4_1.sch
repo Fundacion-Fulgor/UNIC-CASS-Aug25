@@ -6,8 +6,8 @@ S {}
 F {}
 E {}
 B 2 1330 -945 2410 -405 {flags=graph
-y1=-0.18
-y2=1.4
+y1=-0.061
+y2=1.3
 ypos1=0
 ypos2=2
 divy=5
@@ -90,7 +90,7 @@ color="12 7"
 node="VoutQ
 vinQ"}
 B 2 90 -1785 1170 -1245 {flags=graph
-y2=1.3
+y2=0.19794239
 ypos1=0
 ypos2=2
 divy=5
@@ -106,13 +106,9 @@ dataset=-1
 unitx=1
 logx=0
 logy=0
-color="12 7 6 9 21"
-node="VoutI_
-VoutQ_
-VoutIB_
-VoutQB_
-Vout"
-y1=-0.039}
+color=12
+node=Vout
+y1=-1.1410576}
 N 910 -770 910 -710 {
 lab=GND}
 N 910 -870 910 -830 {lab=VDD}
@@ -134,23 +130,23 @@ N 1110 -870 1110 -830 {lab=v1}
 N 1010 -770 1010 -710 {
 lab=GND}
 N 1010 -870 1010 -830 {lab=v0}
-N 290 -330 290 -290 {lab=VDD}
+N 290 -330 290 -290 {lab=#net1}
 N 480 -600 480 -580 {
 lab=GND}
 N 480 -720 480 -660 {
 lab=vinIB}
 N 460 -720 480 -720 {
 lab=vinIB}
-N 210 -70 210 -40 {lab=GND}
+N 210 -70 210 -40 {lab=#net2}
 N 480 -410 480 -390 {
 lab=GND}
 N 480 -530 480 -470 {
 lab=vinQB}
 N 460 -530 480 -530 {
 lab=vinQB}
-N 290 -70 290 -30 {lab="v0, v0"}
+N 290 -70 290 -30 {lab=#net3}
 N 380 -180 410 -180 {
-lab=VoutI_}
+lab=#net4}
 N 1030 -450 1030 -420 {lab=GND}
 N 1030 -650 1030 -610 {lab=VDD}
 N 860 -560 880 -560 {
@@ -170,52 +166,52 @@ lab=VoutIB}
 N 1180 -500 1210 -500 {
 lab=VoutQB}
 N 150 -240 200 -240 {
-lab=VoutI}
+lab=#net5}
 N 150 -200 200 -200 {
-lab=VoutQ}
+lab=#net6}
 N 150 -160 200 -160 {
-lab=VoutIB}
+lab=#net7}
 N 150 -120 200 -120 {
-lab=VoutQB}
-N 690 -330 690 -290 {lab=VDD}
-N 610 -70 610 -40 {lab=GND}
-N 690 -70 690 -30 {lab="v0, v1"}
+lab=#net8}
+N 690 -330 690 -290 {lab=#net9}
+N 610 -70 610 -40 {lab=#net10}
+N 690 -70 690 -30 {lab=#net11}
 N 780 -180 810 -180 {
-lab=VoutQ_}
+lab=#net12}
 N 550 -240 600 -240 {
-lab=VoutI}
+lab=#net13}
 N 550 -200 600 -200 {
-lab=VoutQ}
+lab=#net14}
 N 550 -160 600 -160 {
-lab=VoutIB}
+lab=#net15}
 N 550 -120 600 -120 {
-lab=VoutQB}
-N 1090 -330 1090 -290 {lab=VDD}
-N 1010 -70 1010 -40 {lab=GND}
-N 1090 -70 1090 -30 {lab="v1, v0"}
+lab=#net16}
+N 1090 -330 1090 -290 {lab=#net17}
+N 1010 -70 1010 -40 {lab=#net18}
+N 1090 -70 1090 -30 {lab=#net19}
 N 1180 -180 1210 -180 {
-lab=VoutIB_}
+lab=#net20}
 N 950 -240 1000 -240 {
-lab=VoutI}
+lab=#net21}
 N 950 -200 1000 -200 {
-lab=VoutQ}
+lab=#net22}
 N 950 -160 1000 -160 {
-lab=VoutIB}
+lab=#net23}
 N 950 -120 1000 -120 {
-lab=VoutQB}
-N 1510 -330 1510 -290 {lab=VDD}
-N 1430 -70 1430 -40 {lab=GND}
-N 1510 -70 1510 -30 {lab="v1, v1"}
+lab=#net24}
+N 1510 -330 1510 -290 {lab=#net25}
+N 1430 -70 1430 -40 {lab=#net26}
+N 1510 -70 1510 -30 {lab=#net27}
 N 1600 -180 1630 -180 {
-lab=VoutQB_}
+lab=#net28}
 N 1370 -240 1420 -240 {
-lab=VoutI}
+lab=#net29}
 N 1370 -200 1420 -200 {
-lab=VoutQ}
+lab=#net30}
 N 1370 -160 1420 -160 {
-lab=VoutIB}
+lab=#net31}
 N 1370 -120 1420 -120 {
-lab=VoutQB}
+lab=#net32}
 N 1900 -70 1900 -40 {lab=GND}
 N 1980 -70 1980 -30 {lab="v0, v0"}
 N 2070 -180 2100 -180 {
@@ -228,12 +224,12 @@ N 1840 -160 1890 -160 {
 lab=VoutIB}
 N 1840 -120 1890 -120 {
 lab=VoutQB}
-N 1960 -70 1960 -30 {lab=v0}
+N 1960 -70 1960 -30 {lab=v1}
 N 1980 -330 1980 -290 {lab=VDD}
-N 1490 -70 1490 -30 {lab=v1}
-N 1070 -70 1070 -30 {lab=v1}
-N 670 -70 670 -30 {lab=v1}
-N 270 -70 270 -30 {lab=v1}
+N 1490 -70 1490 -30 {lab=#net33}
+N 1070 -70 1070 -30 {lab=#net34}
+N 670 -70 670 -30 {lab=#net35}
+N 270 -70 270 -30 {lab=#net36}
 C {devices/vsource.sym} 910 -800 0 0 {name=Vdd4 value=1.2}
 C {devices/gnd.sym} 910 -710 0 0 {name=l34 lab=GND}
 C {devices/lab_pin.sym} 910 -870 0 0 {name=p26 sig_type=std_logic lab=VDD}
@@ -275,7 +271,7 @@ tran 0.5p 1.5n
 write tran_logic_mux.raw
 .endc
 "}
-C {devices/launcher.sym} 130 -1080 0 0 {name=h5
+C {devices/launcher.sym} 130 -1090 0 0 {name=h5
 descr="load waves Ctrl + left click" 
 tclcommand="xschem raw_read $netlist_dir/tran_logic_mux.raw tran"
 }
@@ -369,7 +365,7 @@ C {devices/lab_pin.sym} 1840 -160 2 1 {name=p49 sig_type=std_logic lab=VoutIB
 }
 C {devices/lab_pin.sym} 1840 -120 2 1 {name=p50 sig_type=std_logic lab=VoutQB
 }
-C {devices/lab_pin.sym} 1960 -30 0 0 {name=p51 sig_type=std_logic lab=v0
+C {devices/lab_pin.sym} 1960 -30 0 0 {name=p51 sig_type=std_logic lab=v1
 }
 C {devices/lab_pin.sym} 1980 -330 0 0 {name=p59 sig_type=std_logic lab=VDD
 }
