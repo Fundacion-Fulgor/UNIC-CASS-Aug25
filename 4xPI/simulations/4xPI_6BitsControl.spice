@@ -1,0 +1,93 @@
+** sch_path: /foss/designs/4xPI_6BitsControl.sch
+**.subckt 4xPI_6BitsControl VDD VSS VOUT VS[5],VS[4],VS[3],VS[2],VS[1],VS[0] VINI VINQ VINIB VINQB VEN
+*.iopin VDD
+*.iopin VSS
+*.opin VOUT
+*.ipin VS[5],VS[4],VS[3],VS[2],VS[1],VS[0]
+*.ipin VINI
+*.ipin VINQ
+*.ipin VINIB
+*.ipin VINQB
+*.ipin VEN
+x3 VDD VINQ net2 VS[1] VINQB VSS MUX_2_1
+x4 VDD VINI net1 VS[0] VINIB VSS MUX_2_1
+x5 VDD net4 net3 VS[2] net5 VSS MUX_2_1
+x1 VDD net4 net1 VSS inv
+x2 VDD net5 net2 VSS inv
+x6 VDD net26 net3 VSS inv
+x13 VDD VINQ net7 VS[1] VINQB VSS MUX_2_1
+x14 VDD VINI net6 VS[0] VINIB VSS MUX_2_1
+x15 VDD net9 net8 VS[3] net10 VSS MUX_2_1
+x16 VDD net9 net6 VSS inv
+x17 VDD net10 net7 VSS inv
+x18 VDD net25 net8 VSS inv
+x7 VDD VINQ net12 VS[1] VINQB VSS MUX_2_1
+x8 VDD VINI net11 VS[0] VINIB VSS MUX_2_1
+x9 VDD net14 net13 VS[4] net15 VSS MUX_2_1
+x10 VDD net14 net11 VSS inv
+x11 VDD net15 net12 VSS inv
+x12 VDD net24 net13 VSS inv
+x19 VDD VINQB net17 VS[1] VINQ VSS MUX_2_1
+x20 VDD VINI net16 VS[0] VINIB VSS MUX_2_1
+x21 VDD net19 net18 VS[5] net20 VSS MUX_2_1
+x22 VDD net19 net16 VSS inv
+x23 VDD net20 net17 VSS inv
+x24 VDD net23 net18 VSS inv
+x6[1] net21 VEN VEN_b net26 VDD VSS transmission_gate
+x6[0] net21 VEN VEN_b net26 VDD VSS transmission_gate
+x1[1] net21 VEN VEN_b net25 VDD VSS transmission_gate
+x1[0] net21 VEN VEN_b net25 VDD VSS transmission_gate
+x2[1] net21 VEN VEN_b net24 VDD VSS transmission_gate
+x2[0] net21 VEN VEN_b net24 VDD VSS transmission_gate
+x3[1] net21 VEN VEN_b net23 VDD VSS transmission_gate
+x3[0] net21 VEN VEN_b net23 VDD VSS transmission_gate
+x25 VDD net22 net21 VSS inv
+x4[1] VDD VOUT net22 VSS inv
+x4[0] VDD VOUT net22 VSS inv
+x26 VDD VEN_b VEN VSS inv
+**.ends
+
+* expanding   symbol:  MUX_2_1.sym # of pins=6
+** sym_path: /foss/designs/MUX_2_1.sym
+** sch_path: /foss/designs/MUX_2_1.sch
+.subckt MUX_2_1 VDD VINA VOUT VS VINB VSS
+*.opin VOUT
+*.ipin VINA
+*.ipin VINB
+*.ipin VS
+*.iopin VDD
+*.iopin VSS
+x1 VOUT net1 VS VINA VDD VSS transmission_gate
+x2 VOUT VS net1 VINB VDD VSS transmission_gate
+x3 VDD net1 VS VSS inv
+.ends
+
+
+* expanding   symbol:  inv.sym # of pins=4
+** sym_path: /foss/designs/inv.sym
+** sch_path: /foss/designs/inv.sch
+.subckt inv VDD VOUT VIN VSS
+*.iopin VDD
+*.iopin VSS
+*.opin VOUT
+*.ipin VIN
+XM2 VOUT VIN VDD VDD sg13_lv_pmos w=0.15u l=0.13u ng=1 m=2
+XM1 VOUT VIN VSS VSS sg13_lv_nmos w=0.15u l=0.13u ng=1 m=1
+.ends
+
+
+* expanding   symbol:  transmission_gate.sym # of pins=6
+** sym_path: /foss/designs/transmission_gate.sym
+** sch_path: /foss/designs/transmission_gate.sch
+.subckt transmission_gate VOUT VSN VSP VIN VBP VBN
+*.iopin VIN
+*.iopin VSN
+*.iopin VOUT
+*.iopin VSP
+*.iopin VBN
+*.iopin VBP
+XM1 VOUT VSN VIN VBN sg13_lv_nmos w=0.15u l=0.13u ng=1 m=1
+XM2 VOUT VSP VIN VBP sg13_lv_pmos w=0.15u l=0.13u ng=1 m=2
+.ends
+
+.end

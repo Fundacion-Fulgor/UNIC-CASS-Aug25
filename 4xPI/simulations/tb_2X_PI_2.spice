@@ -1,0 +1,180 @@
+** sch_path: /foss/designs/tb_2X_PI_2.sch
+**.subckt tb_2X_PI_2
+Vdd4 VDD GND 1.2
+x1 Vout_QIB v1 VoutI3 VoutQ3 VDD v0 v1 VoutIB3 GND VoutQB3 2X_PI
+Vdd1 v1 GND 1.2
+Vdd2 v0 GND 0
+Vin3 vinI GND dc 0 ac 0 pulse(0, 1.2, 0, 25p, 25p, 225p, 500p)
+Vin4 vinQ GND dc 0 ac 0 pulse(0, 1.2, 125p, 25p, 25p, 225p, 500p )
+Vin5 vinIB GND dc 0 ac 0 pulse(0, 1.2, 250p, 25p, 25p, 225p, 500p )
+Vin6 vinQB GND dc 0 ac 0 pulse(0, 1.2, 375p, 25p, 25p, 225p, 500p )
+x2 VDD vinI VoutI0 VoutQ0 vinQ vinIB VoutIB0 vinQB VoutQB0 GND 4to4
+x3 Vout_IQ v1 VoutI1 VoutQ1 VDD v0 v0 VoutIB1 GND VoutQB1 2X_PI
+x4 Vout_IBQB v1 VoutI5 VoutQ5 VDD v1 v0 VoutIB5 GND VoutQB5 2X_PI
+x5 VDD vinI VoutI1 VoutQ1 vinQ vinIB VoutIB1 vinQB VoutQB1 GND 4to4
+x6 VDD vinI VoutI2 VoutQ2 vinQ vinIB VoutIB2 vinQB VoutQB2 GND 4to4
+x7 VDD vinI VoutI3 VoutQ3 vinQ vinIB VoutIB3 vinQB VoutQB3 GND 4to4
+x8 Vout_IB v0 VoutI4 VoutQ4 VDD v1 v0 VoutIB4 GND VoutQB4 2X_PI
+x9 VDD vinI VoutI4 VoutQ4 vinQ vinIB VoutIB4 vinQB VoutQB4 GND 4to4
+x10 Vout_I v0 VoutI0 VoutQ0 VDD v0 v0 VoutIB0 GND VoutQB0 2X_PI
+x11 Vout_Q v0 VoutI2 VoutQ2 VDD v0 v1 VoutIB2 GND VoutQB2 2X_PI
+x12 VDD vinI VoutI5 VoutQ5 vinQ vinIB VoutIB5 vinQB VoutQB5 GND 4to4
+x13 Vout_QB v0 VoutI6 VoutQ6 VDD v1 v1 VoutIB6 GND VoutQB6 2X_PI
+x14 VDD vinI VoutI6 VoutQ6 vinQ vinIB VoutIB6 vinQB VoutQB6 GND 4to4
+x15 Vout_QBI v1 VoutI7 VoutQ7 VDD v1 v1 VoutIB7 GND VoutQB7 2X_PI
+x16 VDD vinI VoutI7 VoutQ7 vinQ vinIB VoutIB7 vinQB VoutQB7 GND 4to4
+**** begin user architecture code
+
+
+.param temp=27
+.control
+save all
+tran 5p 1.5n
+
+meas tran tPWI TRIG v(Vout_I) VAl=0.6 RISE=1 TARG v(Vout_I) VAl=0.6 FALL=1
+meas tran tPWIQ TRIG v(Vout_IQ) VAl=0.6 RISE=1 TARG v(Vout_IQ) VAl=0.6 FALL=1
+meas tran tPWQ TRIG v(Vout_Q) VAl=0.6 RISE=1 TARG v(Vout_Q) VAl=0.6 FALL=1
+meas tran tPWQIB TRIG v(Vout_QIB) VAl=0.6 RISE=1 TARG v(Vout_QIB) VAl=0.6 FALL=1
+meas tran tPWIB TRIG v(Vout_IB) VAl=0.6 RISE=1 TARG v(Vout_IB) VAl=0.6 FALL=1
+meas tran tPWIBQB TRIG v(Vout_IBQB) VAl=0.6 RISE=1 TARG v(Vout_IBQB) VAl=0.6 FALL=1
+meas tran tPWQB TRIG v(Vout_QB) VAl=0.6 RISE=1 TARG v(Vout_QB) VAl=0.6 FALL=1
+meas tran tPWQBI TRIG v(Vout_QBI) VAl=0.6 RISE=1 TARG v(Vout_QBI) VAl=0.6 FALL=1
+
+
+meas tran tskewI_IQ TRIG v(Vout_I) VAl=0.6 RISE=1 TARG v(Vout_IQ) VAl=0.6 RISE=1
+meas tran tskewIQ_Q TRIG v(Vout_IQ) VAl=0.6 RISE=1 TARG v(Vout_Q) VAl=0.6 RISE=1
+meas tran tskewQ_QIB TRIG v(Vout_Q) VAl=0.6 RISE=1 TARG v(Vout_QIB) VAl=0.6 RISE=1
+meas tran tskewQIB_IB TRIG v(Vout_QIB) VAl=0.6 RISE=1 TARG v(Vout_IB) VAl=0.6 RISE=1
+meas tran tskewIB_IBQB TRIG v(Vout_IB) VAl=0.6 RISE=1 TARG v(Vout_IBQB) VAl=0.6 RISE=1
+meas tran tskewIBQB_QB TRIG v(Vout_IBQB) VAl=0.6 RISE=1 TARG v(Vout_QB) VAl=0.6 RISE=1
+meas tran tskewQB_QBI TRIG v(Vout_QB) VAl=0.6 RISE=1 TARG v(Vout_QBI) VAl=0.6 RISE=1
+meas tran tskewQBI_I TRIG v(Vout_QBI) VAl=0.6 RISE=1 TARG v(Vout_I) VAl=0.6 RISE=2
+
+
+write tran_logic_not.raw
+.endc
+
+
+
+.lib cornerMOSlv.lib mos_tt
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  2X_PI.sym # of pins=9
+** sym_path: /foss/designs/2X_PI.sym
+** sch_path: /foss/designs/2X_PI.sch
+.subckt 2X_PI VOUT VEN VINI VINQ VDD VS[1] VS[0] VINIB VSS VINQB
+*.iopin VDD
+*.opin VOUT
+*.ipin VINI
+*.ipin VINQ
+*.iopin VSS
+*.ipin VS[1],VS[0]
+*.ipin VINIB
+*.ipin VINQB
+*.ipin VEN
+x11 VINI VINQ VDD net1 VS[1] VS[0] VINIB VSS VINQB MUX_4_1
+x3 VINQ VINIB VDD net2 VS[1] VS[0] VINQB VSS VINI MUX_4_1
+x4 VDD net4 net3 VSS inv
+x5 net3 VDD VSS net1 VDD VSS transmission_gate
+x6[1] net3 VEN VEN_b net2 VDD VSS transmission_gate
+x6[0] net3 VEN VEN_b net2 VDD VSS transmission_gate
+x7 VDD VEN_b VEN VSS inv
+x1[1] VDD VOUT net4 VSS inv
+x1[0] VDD VOUT net4 VSS inv
+x2 net3 VEN VEN_b net1 VDD VSS transmission_gate
+.ends
+
+
+* expanding   symbol:  4to4.sym # of pins=10
+** sym_path: /foss/designs/4to4.sym
+** sch_path: /foss/designs/4to4.sch
+.subckt 4to4 VDD VINI VOUTI VOUTQ VINQ VINIB VOUTIB VINQB VOUTQB VSS
+*.iopin VDD
+*.iopin VSS
+*.ipin VINI
+*.ipin VINQ
+*.ipin VINIB
+*.ipin VINQB
+*.opin VOUTI
+*.opin VOUTQ
+*.opin VOUTIB
+*.opin VOUTQB
+x0 VDD net4 VINI VSS inv
+x1 VDD net3 VINQ VSS inv
+x2 VDD net1 VINIB VSS inv
+x3 VDD net2 VINQB VSS inv
+x4 VDD VOUTI net4 VSS inv
+x5 VDD VOUTQ net3 VSS inv
+x6 VDD VOUTIB net1 VSS inv
+x7 VDD VOUTQB net2 VSS inv
+.ends
+
+
+* expanding   symbol:  MUX_4_1.sym # of pins=8
+** sym_path: /foss/designs/MUX_4_1.sym
+** sch_path: /foss/designs/MUX_4_1.sch
+.subckt MUX_4_1 VINI VINQ VDD VOUT VS[1] VS[0] VINIB VSS VINQB
+*.opin VOUT
+*.iopin VDD
+*.iopin VSS
+*.ipin VINI
+*.ipin VINQ
+*.ipin VINIB
+*.ipin VINQB
+*.ipin VS[1],VS[0]
+x3 VDD VINIB net2 VS[0] VINQB VSS MUX_2_1
+x4 VDD VINI net1 VS[0] VINQ VSS MUX_2_1
+x5 VDD net4 net3 VS[1] net5 VSS MUX_2_1
+x1 VDD net4 net1 VSS inv
+x2 VDD net5 net2 VSS inv
+x6 VDD VOUT net3 VSS inv
+.ends
+
+
+* expanding   symbol:  inv.sym # of pins=4
+** sym_path: /foss/designs/inv.sym
+** sch_path: /foss/designs/inv.sch
+.subckt inv VDD VOUT VIN VSS
+*.iopin VDD
+*.iopin VSS
+*.opin VOUT
+*.ipin VIN
+XM2 VOUT VIN VDD VDD sg13_lv_pmos w=0.15u l=0.13u ng=1 m=2
+XM1 VOUT VIN VSS VSS sg13_lv_nmos w=0.15u l=0.13u ng=1 m=1
+.ends
+
+
+* expanding   symbol:  transmission_gate.sym # of pins=6
+** sym_path: /foss/designs/transmission_gate.sym
+** sch_path: /foss/designs/transmission_gate.sch
+.subckt transmission_gate VOUT VSN VSP VIN VBP VBN
+*.iopin VIN
+*.iopin VSN
+*.iopin VOUT
+*.iopin VSP
+*.iopin VBN
+*.iopin VBP
+XM1 VOUT VSN VIN VBN sg13_lv_nmos w=0.15u l=0.13u ng=1 m=1
+XM2 VOUT VSP VIN VBP sg13_lv_pmos w=0.15u l=0.13u ng=1 m=2
+.ends
+
+
+* expanding   symbol:  MUX_2_1.sym # of pins=6
+** sym_path: /foss/designs/MUX_2_1.sym
+** sch_path: /foss/designs/MUX_2_1.sch
+.subckt MUX_2_1 VDD VINA VOUT VS VINB VSS
+*.opin VOUT
+*.ipin VINA
+*.ipin VINB
+*.ipin VS
+*.iopin VDD
+*.iopin VSS
+x1 VOUT net1 VS VINA VDD VSS transmission_gate
+x2 VOUT VS net1 VINB VDD VSS transmission_gate
+x3 VDD net1 VS VSS inv
+.ends
+
+.GLOBAL GND
+.end
