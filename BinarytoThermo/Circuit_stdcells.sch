@@ -1,9 +1,8 @@
-v {xschem version=3.4.8RC file_version=1.2}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {}
 V {}
 S {}
-F {}
 E {}
 N -100 -220 -100 90 {lab=#net1}
 N -100 -220 -30 -220 {lab=#net1}
@@ -74,9 +73,9 @@ C {iopin.sym} 200 110 0 0 {name=p5 lab=s3t}
 C {iopin.sym} 190 280 0 0 {name=p6 lab=s4t}
 C {iopin.sym} -590 -340 3 0 {name=p7 lab=vdd}
 C {iopin.sym} -640 -340 3 0 {name=p10 lab=vss}
-C {/foss/designs/Termo_codePI/nand_prtt.sym} 60 120 0 0 {name=x3}
-C {/foss/designs/Termo_codePI/nor_prtt.sym} 20 -190 0 0 {name=x1}
-C {/foss/designs/Termo_codePI/inv_prtt.sym} -400 -240 0 0 {name=x2}
-C {/foss/designs/Termo_codePI/inv_prtt.sym} 30 -40 0 0 {name=x4}
-C {/foss/designs/Termo_codePI/inv_prtt.sym} -390 -40 0 0 {name=x5}
-C {/foss/designs/Termo_codePI/inv_prtt.sym} 30 280 0 0 {name=x6}
+C {/home/designer/UNIC-CASS-Aug25/BinarytoThermo/nand_prtt.sym} 60 120 0 0 {name=x3}
+C {/home/designer/UNIC-CASS-Aug25/BinarytoThermo/nor_prtt.sym} 20 -190 0 0 {name=x1}
+C {/home/designer/UNIC-CASS-Aug25/BinarytoThermo/inv_prtt.sym} -400 -240 0 0 {name=x2}
+C {/home/designer/UNIC-CASS-Aug25/BinarytoThermo/inv_prtt.sym} 30 -40 0 0 {name=x4}
+C {/home/designer/UNIC-CASS-Aug25/BinarytoThermo/inv_prtt.sym} -390 -40 0 0 {name=x5}
+C {/home/designer/UNIC-CASS-Aug25/BinarytoThermo/inv_prtt.sym} 30 280 0 0 {name=x6}

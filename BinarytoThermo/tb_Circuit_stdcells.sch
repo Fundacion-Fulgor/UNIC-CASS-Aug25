@@ -1,9 +1,8 @@
-v {xschem version=3.4.8RC file_version=1.2}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {}
 V {}
 S {}
-F {}
 E {}
 N 150 -30 180 -30 {lab=vo_s1t}
 N 180 -230 180 -30 {lab=vo_s1t}
@@ -103,7 +102,7 @@ C {lab_pin.sym} 0 -120 2 0 {name=p17 sig_type=std_logic lab=avdd}
 C {lab_pin.sym} -170 40 0 0 {name=p18 sig_type=std_logic lab=vs3}
 C {lab_pin.sym} -170 -40 0 0 {name=p19 sig_type=std_logic lab=vs4}
 C {lab_pin.sym} 215 -240 1 0 {name=p20 sig_type=std_logic lab=vo_s1t}
-C {netlist_not_shown.sym} -245 -295 0 0 {name=SIMULATION only_toplevel=false
+C {netlist_not_shown.sym} -155 -285 0 0 {name=SIMULATION only_toplevel=false
 
 value="
 
@@ -122,10 +121,10 @@ value="
 .options TEMP = 65.0
 
 * Include Models
-.lib /foss/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib mos_tt
-.lib /foss/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerMOShv.lib mos_tt
-.lib /foss/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerHBT.lib hbt_typ
-.lib /foss/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerRES.lib res_typ
+.lib /opt/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib mos_tt
+.lib /opt/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerMOShv.lib mos_tt
+.lib /opt/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerHBT.lib hbt_typ
+.lib /opt/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerRES.lib res_typ
 
 
 *.lib cornerMOSlv.lib mos_tt
@@ -170,7 +169,7 @@ value="
 C {lab_pin.sym} 245 -95 1 0 {name=p21 sig_type=std_logic lab=vo_s2t}
 C {lab_pin.sym} 245 65 1 0 {name=p22 sig_type=std_logic lab=vo_s3t}
 C {lab_pin.sym} 220 220 1 0 {name=p23 sig_type=std_logic lab=vo_s4t}
-C {/foss/designs/Termo_codePI/Circuit_stdcells.sym} 0 0 0 0 {name=x1}
+C {/home/designer/UNIC-CASS-Aug25/BinarytoThermo/Circuit_stdcells.sym} 0 0 0 0 {name=x1}
 C {lab_pin.sym} 0 120 0 0 {name=p8 sig_type=std_logic lab=avss}
 C {lab_pin.sym} 390 -10 2 0 {name=p9 sig_type=std_logic lab=avss}
 C {lab_pin.sym} 400 -160 2 0 {name=p10 sig_type=std_logic lab=avss}
@@ -179,9 +178,9 @@ C {lab_pin.sym} 400 310 2 0 {name=p12 sig_type=std_logic lab=avss}
 C {lab_pin.sym} 325 -150 0 0 {name=p13 sig_type=std_logic lab=avdd}
 C {lab_pin.sym} 325 10 0 0 {name=p14 sig_type=std_logic lab=avdd}
 C {lab_pin.sym} 325 160 0 0 {name=p15 sig_type=std_logic lab=avdd}
-C {/foss/designs/Termo_codePI/inv_prtt.sym} 360 -230 0 0 {name=x2}
-C {/foss/designs/Termo_codePI/inv_prtt.sym} 360 -80 0 0 {name=x3}
-C {/foss/designs/Termo_codePI/inv_prtt.sym} 360 80 0 0 {name=x4}
-C {/foss/designs/Termo_codePI/inv_prtt.sym} 360 230 0 0 {name=x5}
+C {/home/designer/UNIC-CASS-Aug25/BinarytoThermo/inv_prtt.sym} 360 -230 0 0 {name=x2}
+C {/home/designer/UNIC-CASS-Aug25/BinarytoThermo/inv_prtt.sym} 360 -80 0 0 {name=x3}
+C {/home/designer/UNIC-CASS-Aug25/BinarytoThermo/inv_prtt.sym} 360 80 0 0 {name=x4}
+C {/home/designer/UNIC-CASS-Aug25/BinarytoThermo/inv_prtt.sym} 360 230 0 0 {name=x5}
 C {lab_pin.sym} 940 -265 1 0 {name=p24 sig_type=std_logic lab=avdd}
 C {bsource.sym} 980 130 0 0 {name=B1 VAR=I FUNC="'pwl(V(plus,minus),0,0, 1,10m, 2, 100m)'" m=1}
