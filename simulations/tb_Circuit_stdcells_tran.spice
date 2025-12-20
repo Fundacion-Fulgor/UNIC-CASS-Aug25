@@ -39,7 +39,7 @@ V7 vs4 avss PULSE({c*1.2} {d*1.2} 250PS 2PS 2PS 500PS)
 
 *Simulations
 .control
-set output_path = tb_termopi_tran/
+set output_path = tb_bin2thermo_tran/
 	* Desde (s3,s4)=00 a 01
 	tran 0.2PS 750PS
 	setplot tran1

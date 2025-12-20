@@ -127,7 +127,7 @@ value="
 
 *Simulations
 .control
-set output_path = tb_termopi_tran/
+set output_path = tb_bin2thermo_tran/
 	* Desde (s3,s4)=00 a 01
 	tran 0.2PS 750PS
 	setplot tran1
