@@ -18,7 +18,7 @@ This repository indexes all tapeout postulations by Fundación FULGOR's fellows.
 
 # [8-bit Gated Ring Oscillator Time-to-Digital Converter](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/main/GRO-TDC)
 - Status: ✅ Accepted
-- Design Type: Digital
+- Design Type: Analog
 - Designers:  Sebastian Hernandez,
 Emiliano Marclé (graduates);
 Constanza Abiuso,
@@ -58,13 +58,13 @@ Matias Schulthess (undergraduates)
 
 
 # [Digital Timing Recovery System with ML-based TED and Polyphase Filters](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/main/Digital-Timing-Recovery)
-- Design Type: Digital
+- Design Type: Digital (RTL)
 - Designers: 
     Juan Chirino, Tiago Ruiz, Agustin Pesce (graduates) ; Agustin Arese, Juliana Maidana (undergraduates)
 
 
 # [MIPS Processor Pipeline](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/main/MIPS_Pipeline)
-- Design Type: Digital
+- Design Type: Digital (PD)
 - Designers: Augusto Gabriel Cabrera,
 Juan Ignacio Chirino Bohorquez,
 Natalia Carolina Borbón,
@@ -73,12 +73,12 @@ Tiago Gastón Giaimis (undergraduates)
 
 
 # [Polyphase Transmission Filter](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/main/Tx_Polyphase_FIR)
-- Design Type: Digital
+- Design Type: Digital (RTL)
 - Designers: Mariano Carcamo, Gabriel Garces (graduates) ; Leslie Barrios, Ignacio Gatti (undergraduates)
 
 
 # [UART Communication Interface for ALU](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/main/UARThmetic)
-- Design Type: Digital
+- Design Type: Digital (PD)
 - Designers: Augusto Gabriel Cabrera,
 Juan Ignacio Chirino Bohorquez,
 Natalia Carolina Borbón,
@@ -88,13 +88,13 @@ Tiago Gastón Giaimis (undergraduates)
 
 # [32-Point MDC-8 FFT](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/main/parallel_fft)
 - Status: ✅ Accepted
-- Design Type: Digital
+- Design Type: Digital (RTL)
 - Designers: Adan Lema, Federico Villar (graduates); Julian Font, Agustin Romero, Valentina Mosquera (undergraduates)
 
 # [FSE LMS]()
-- Design Type: Digital
+- Design Type: Digital (RTL)
 - Designers: Ramiro Ferreyra, Santiago Garaventta, Jorge Guerra (graduates); Ezequiel Cavestri, Octabio Baccino (undergraduates)
 
 # [CCR]()
-- Design Type: Digital
+- Design Type: Digital (RTL)
 - Designers: Ignacio Balbo, Agustin Pesce (graduates), Giselle Denise, Mauro Cabero (undergraduates)
