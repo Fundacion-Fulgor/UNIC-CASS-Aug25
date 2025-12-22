@@ -1,0 +1,45 @@
+** sch_path: /home/designer/shared/UNIC-CASS-Aug25/variable_delay_line.sch
+**.subckt variable_delay_line VDD VSS VCONT VOUT VIN
+*.iopin VSS
+*.iopin VDD
+*.ipin VIN
+*.opin VOUT
+*.ipin VCONT
+x1 VDD VIN net1 VCONT VSS variable_delay
+x2 VDD net1 net5 VCONT VSS variable_delay
+x3 VDD net5 net4 VCONT VSS variable_delay
+x4 VDD net4 net3 VCONT VSS variable_delay
+x5 VDD net3 net2 VCONT VSS variable_delay
+x6 VDD net2 VOUT VCONT VSS variable_delay
+**.ends
+
+* expanding   symbol:  variable_delay.sym # of pins=5
+** sym_path: /home/designer/shared/UNIC-CASS-Aug25/variable_delay.sym
+** sch_path: /home/designer/shared/UNIC-CASS-Aug25/variable_delay.sch
+.subckt variable_delay VDD VIN VOUT VCONT VSS
+*.iopin VSS
+*.iopin VDD
+*.ipin VIN
+*.opin VOUT
+*.ipin VCONT
+XM5 net2 VCONT VSS VSS sg13_lv_nmos w=5u l=0.13u ng=1 m=1
+XM6 net1 net3 VDD VDD sg13_lv_pmos w=5u l=0.13u ng=1 m=1
+XM2 VOUT VIN net1 VDD sg13_lv_pmos w=0.88u l=0.13u ng=4 m=1
+XM1 VOUT VIN net2 VSS sg13_lv_nmos w=0.4u l=0.13u ng=1 m=1
+x1 VDD VCONT net3 VSS inv_1_manual
+.ends
+
+
+* expanding   symbol:  /home/designer/shared/UNIC-CASS-Aug25/others/inv_1_manual.sym # of pins=4
+** sym_path: /home/designer/shared/UNIC-CASS-Aug25/others/inv_1_manual.sym
+** sch_path: /home/designer/shared/UNIC-CASS-Aug25/others/inv_1_manual.sch
+.subckt inv_1_manual VDD_D A Y VSS_D
+*.iopin VDD_D
+*.iopin VSS_D
+*.iopin A
+*.iopin Y
+XM1 Y A VSS_D VSS_D sg13_lv_nmos w=10u l=0.13u ng=1 m=1
+XM2 Y A VDD_D VDD_D sg13_lv_pmos w=10u l=0.13u ng=1 m=1
+.ends
+
+.end

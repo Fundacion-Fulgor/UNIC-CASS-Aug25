@@ -1,0 +1,45 @@
+** sch_path: /foss/designs/UNIC-CASS-Aug25/sch/phase_detector/phase_detector.sch
+**.subckt phase_detector CK_IN UP CK_REF DN
+*.opin UP
+*.ipin CK_IN
+*.ipin CK_REF
+*.opin DN
+XM7 net2 CK_IN VDD VDD sg13_lv_pmos w=5u l=4u ng=1 m=1
+XM8 net1 CK_IN VDD VDD sg13_lv_pmos w=5u l=4u ng=1 m=1
+XM9 net2 CK_REF net1 net1 sg13_lv_nmos w=2u l=5u ng=5 m=1
+XM10 net2 DN net1 VSS sg13_lv_nmos w=2u l=5u ng=5 m=1
+XM11 net1 CK_IN VSS VSS sg13_lv_nmos w=2u l=5u ng=5 m=1
+XM6 net5 net4 VDD VDD sg13_lv_pmos w=5u l=4u ng=1 m=1
+XM12 net5 CK_IN net6 net7 sg13_lv_nmos w=2u l=5u ng=5 m=1
+XM13 net6 net4 net7 net7 sg13_lv_nmos w=2u l=5u ng=5 m=1
+XM14 net6 net4 VDD VDD sg13_lv_pmos w=5u l=4u ng=1 m=1
+x1 VDD net2 net3 VSS inv_1_manual
+x2 VDD net3 net4 VSS inv_1_manual
+x3 VDD net5 UP net7 inv_1_manual
+XM19 net9 CK_IN VDD VDD sg13_lv_pmos w=5u l=4u ng=1 m=1
+XM20 net8 CK_IN VDD VDD sg13_lv_pmos w=5u l=4u ng=1 m=1
+XM21 net9 CK_REF net8 net8 sg13_lv_nmos w=2u l=5u ng=5 m=1
+XM22 net9 UP net8 VSS sg13_lv_nmos w=2u l=5u ng=5 m=1
+XM23 net8 CK_IN VSS VSS sg13_lv_nmos w=2u l=5u ng=5 m=1
+XM24 net11 net10 VDD VDD sg13_lv_pmos w=5u l=4u ng=1 m=1
+XM25 net11 CK_REF net12 net13 sg13_lv_nmos w=2u l=5u ng=5 m=1
+XM26 net12 net10 net13 net13 sg13_lv_nmos w=2u l=5u ng=5 m=1
+XM27 net12 net10 VDD VDD sg13_lv_pmos w=5u l=4u ng=1 m=1
+x4 VDD net9 net14 VSS inv_1_manual
+x5 VDD net14 net10 VSS inv_1_manual
+x6 VDD net11 DN net13 inv_1_manual
+**.ends
+
+* expanding   symbol:  /foss/designs/UNIC-CASS-Aug25/sch/inv_1_manual/inv_1_manual.sym # of pins=4
+** sym_path: /foss/designs/UNIC-CASS-Aug25/sch/inv_1_manual/inv_1_manual.sym
+** sch_path: /foss/designs/UNIC-CASS-Aug25/sch/inv_1_manual/inv_1_manual.sch
+.subckt inv_1_manual VDD_D A Y VSS_D
+*.iopin VDD_D
+*.iopin VSS_D
+*.iopin A
+*.iopin Y
+XM1 Y A VSS_D VSS_D sg13_lv_nmos w=10u l=0.13u ng=1 m=1
+XM2 Y A VDD_D VDD_D sg13_lv_pmos w=10u l=0.13u ng=1 m=1
+.ends
+
+.end

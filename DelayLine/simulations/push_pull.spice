@@ -1,0 +1,37 @@
+** sch_path: /foss/designs/DLL/push_pull.sch
+**.subckt push_pull UP_IN VC DN_IN
+*.ipin DN_IN
+*.ipin UP_IN
+*.opin VC
+XM1 net1 DN_IN net2 VSS sg13_lv_nmos w=720n l=240n ng=1 m=1
+XM7 net1 net1 VDD VDD sg13_lv_pmos w=2.16u l=240n ng=1 m=1
+x1 VDD DN_IN DNB VSS inv_1_manual
+x2 VDD UP_IN UPB VSS inv_1_manual
+C1 VC VSS 10f m=1
+XM4 net1 net1 VDD VDD sg13_lv_pmos w=2.16u l=240n ng=1 m=1
+XM5 net5 net7 VDD VDD sg13_lv_pmos w=2.16u l=240n ng=1 m=1
+XM8 net5 net7 VDD VDD sg13_lv_pmos w=2.16u l=240n ng=1 m=1
+XM11 net6 net4 VDD VDD sg13_lv_pmos w=2.16u l=240n ng=1 m=1
+XM12 net6 net4 VDD VDD sg13_lv_pmos w=2.16u l=240n ng=1 m=1
+XM13 VC net1 VDD VDD sg13_lv_pmos w=2.16u l=240n ng=1 m=1
+XM14 VC net1 VDD VDD sg13_lv_pmos w=2.16u l=240n ng=1 m=1
+XM2 net7 DNB net2 VSS sg13_lv_nmos w=720n l=240n ng=1 m=1
+XM6 net4 UPB net3 VSS sg13_lv_nmos w=720n l=240n ng=1 m=1
+XM9 VC UP_IN net3 VSS sg13_lv_nmos w=360n l=240n ng=1 m=1
+XM3 net2 VDD VSS VSS sg13_lv_nmos w=720n l=240n ng=1 m=1
+XM10 net3 VDD VSS VSS sg13_lv_nmos w=720n l=240n ng=1 m=1
+**.ends
+
+* expanding   symbol:  /foss/designs/DLL/others/inv_1_manual.sym # of pins=4
+** sym_path: /foss/designs/DLL/others/inv_1_manual.sym
+** sch_path: /foss/designs/DLL/others/inv_1_manual.sch
+.subckt inv_1_manual VDD_D A Y VSS_D
+*.iopin VDD_D
+*.iopin VSS_D
+*.iopin A
+*.iopin Y
+XM1 Y A VSS_D VSS_D sg13_lv_nmos w=10u l=0.13u ng=1 m=1
+XM2 Y A VDD_D VDD_D sg13_lv_pmos w=10u l=0.13u ng=1 m=1
+.ends
+
+.end

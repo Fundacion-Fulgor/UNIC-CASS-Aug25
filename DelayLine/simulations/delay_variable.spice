@@ -1,0 +1,15 @@
+** sch_path: /foss/designs/UNIC-CASS-Aug25/sch/delay_variable/delay_variable.sch
+**.subckt delay_variable VDD_D VIN_D VOUT_D VCONT_D VSS_D
+*.iopin VSS_D
+*.iopin VDD_D
+*.opin VOUT_D
+*.ipin VCONT_D
+*.ipin VIN_D
+XM3 net4 VCONT_D net2 net2 sg13_lv_nmos w=1u l=0.13u ng=1 m=1
+XM5 net3 VCONT_D net2 net2 sg13_lv_nmos w=2u l=2u ng=1 m=1
+XM4 net4 net4 VDD_D VDD_D sg13_lv_pmos w=2.24u l=0.13u ng=1 m=1
+XM6 net1 net4 VDD_D VDD_D sg13_lv_pmos w=4*1u l=2u ng=1 m=1
+XM7 VOUT_D VIN_D net1 VDD_D sg13_lv_pmos w=4*5u l=2u ng=4 m=1
+XM8 VOUT_D VIN_D net3 net2 sg13_lv_nmos w=5u l=3u ng=1 m=1
+**.ends
+.end

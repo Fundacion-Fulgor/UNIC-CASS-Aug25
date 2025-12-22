@@ -1,0 +1,12 @@
+** sch_path: /foss/designs/UNIC-CASS-Aug25/sch/large_delay_vto1p1/large_delay_vto1p1.sch
+**.subckt large_delay_vto1p1 VCC VSS VIN VOUT
+*.iopin VIN
+*.iopin VOUT
+*.iopin VCC
+*.iopin VSS
+x1 VIN VCC VSS VOUT sg13g2_dlygate4sd1_1
+x2 VIN VCC VSS VOUT sg13g2_dlygate4sd1_1
+x3 VIN VCC VSS VOUT sg13g2_dlygate4sd1_1
+x4 VIN VCC VSS VOUT sg13g2_dlygate4sd1_1
+**.ends
+.end

@@ -1,0 +1,96 @@
+** sch_path: /foss/designs/UNIC-CASS-Aug25/sch/delay_variable_line/tb_variable_delay_line.sch
+**.subckt tb_variable_delay_line
+x1 net2 GND net1 vout vgate variable_delay_line
+C1 vout GND 100f m=1
+V1 net1 GND 0.4
+R1 vgate vin1 1k m=1
+V5 vin1 GND 0.4
+V6 net2 GND 1.2
+**** begin user architecture code
+
+
+.save v(vin) v(vgate) v(vout) v(va)
+
+
+
+.tran 2p 5n
+.save all
+*.ic v(vout) = 0
+.control
+run
+plot v(vin1) v(vout)
+
+*plot v(vgate)
+*plot v(vout)
+*meas tran teval WHEN v(vout) = 0.63
+*let res_val = 1000
+*let cap_val = teval/res_val
+*print cap_val
+.endc
+
+
+
+
+.param corner=0
+
+.if (corner==0)
+.lib /foss/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib mos_tt
+.lib /foss/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib mos_tt
+.lib /foss/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerRES.lib res_typ
+.lib /foss/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerCAP.lib cap_typ
+.endif
+
+.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  /foss/designs/UNIC-CASS-Aug25/sch/delay_variable_line/variable_delay_line.sym # of pins=5
+** sym_path: /foss/designs/UNIC-CASS-Aug25/sch/delay_variable_line/variable_delay_line.sym
+** sch_path: /foss/designs/UNIC-CASS-Aug25/sch/delay_variable_line/variable_delay_line.sch
+.subckt variable_delay_line VDD VSS VCONT VOUT VIN
+*.iopin VSS
+*.iopin VDD
+*.ipin VIN
+*.opin VOUT
+*.ipin VCONT
+x1 VDD VIN va VCONT VSS delay_variable
+x2 VDD VSS va VOUT large_delay_vto1p1
+.ends
+
+
+* expanding   symbol:  /foss/designs/UNIC-CASS-Aug25/sch/delay_variable/delay_variable.sym # of pins=5
+** sym_path: /foss/designs/UNIC-CASS-Aug25/sch/delay_variable/delay_variable.sym
+** sch_path: /foss/designs/UNIC-CASS-Aug25/sch/delay_variable/delay_variable.sch
+.subckt delay_variable VDD_D VIN_D VOUT_D VCONT_D VSS_D
+*.iopin VDD_D
+*.opin VOUT_D
+*.ipin VCONT_D
+*.ipin VIN_D
+*.iopin VSS_D
+XM3 net3 VCONT_D VSS_D VSS_D sg13_lv_nmos w=1u l=0.13u ng=1 m=1
+XM5 net2 VCONT_D VSS_D VSS_D sg13_lv_nmos w=2u l=2u ng=1 m=1
+XM4 net3 net3 VDD_D VDD_D sg13_lv_pmos w=2.24u l=0.13u ng=1 m=1
+XM6 net1 net3 VDD_D VDD_D sg13_lv_pmos w=4u l=2u ng=1 m=1
+XM7 VOUT_D VIN_D net1 VDD_D sg13_lv_pmos w=4u l=2u ng=4 m=1
+XM8 VOUT_D VIN_D net2 VSS_D sg13_lv_nmos w=5u l=3u ng=1 m=1
+.ends
+
+
+* expanding   symbol:  /foss/designs/UNIC-CASS-Aug25/sch/large_delay_vto1p1/large_delay_vto1p1.sym # of pins=4
+** sym_path: /foss/designs/UNIC-CASS-Aug25/sch/large_delay_vto1p1/large_delay_vto1p1.sym
+** sch_path: /foss/designs/UNIC-CASS-Aug25/sch/large_delay_vto1p1/large_delay_vto1p1.sch
+.subckt large_delay_vto1p1 VCC VSS VIN VOUT
+*.iopin VIN
+*.iopin VOUT
+*.iopin VCC
+*.iopin VSS
+x1 VIN VCC VSS net1 sg13g2_dlygate4sd1_1
+x2 VIN VCC VSS net1 sg13g2_dlygate4sd1_1
+x3 VIN VCC VSS net1 sg13g2_dlygate4sd1_1
+x4 VIN VCC VSS net1 sg13g2_dlygate4sd1_1
+x5 net1 VCC VSS VOUT sg13g2_dlygate4sd3_1
+.ends
+
+.GLOBAL GND
+.end

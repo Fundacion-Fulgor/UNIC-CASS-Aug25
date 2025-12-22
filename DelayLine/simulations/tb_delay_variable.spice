@@ -1,0 +1,58 @@
+** sch_path: /foss/designs/UNIC-CASS-Aug25/sch/delay_variable/tb_delay_variable.sch
+**.subckt tb_delay_variable
+Vin1 in GND dc 0 ac 0 pulse(0, 1.2, 0, 25p, 25p, 250p, 500p )
+Vdd1 net1 GND 1.2
+C2 net3 net4 1f m=1
+VCONT net2 net5 dc {VCONT}
+x1 net1 in out net2 GND delay_variable
+**** begin user architecture code
+
+
+.param temp=27
+.Param VCONT=0.5
+.control
+  save all
+  step param VCONT 0.40 0.90 0.05   ; barrido 0.40→0.90 V en pasos de 50 mV
+   *Vcont vcont 0 PWL(0n 0.40 10n 0.90)
+  tran 1p 20n
+  meas tran tdelay TRIG v(in) VAL=0.9 FALL=1 TARG v(out) VAL=0.9 RISE=1
+  write tran_logic_not.raw
+.endc
+.end
+
+
+
+
+.param corner=0
+
+.if (corner==0)
+.lib /foss/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib mos_tt
+.lib /foss/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib mos_tt
+.lib /foss/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerRES.lib res_typ
+.lib /foss/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerCAP.lib cap_typ
+.endif
+
+.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  /foss/designs/UNIC-CASS-Aug25/sch/delay_variable/delay_variable.sym # of pins=5
+** sym_path: /foss/designs/UNIC-CASS-Aug25/sch/delay_variable/delay_variable.sym
+** sch_path: /foss/designs/UNIC-CASS-Aug25/sch/delay_variable/delay_variable.sch
+.subckt delay_variable VDD_D VIN_D VOUT_D VCONT_D VSS_D
+*.iopin VSS_D
+*.iopin VDD_D
+*.opin VOUT_D
+*.ipin VCONT_D
+*.ipin VIN_D
+XM3 net4 VCONT_D net2 net2 sg13_lv_nmos w=1u l=0.13u ng=1 m=1
+XM5 net3 VCONT_D net2 net2 sg13_lv_nmos w=2u l=2u ng=1 m=1
+XM4 net4 net4 VDD_D VDD_D sg13_lv_pmos w=2.24*1u l=0.13u ng=1 m=1
+XM6 net1 net4 VDD_D VDD_D sg13_lv_pmos w=4*1u l=2u ng=1 m=1
+XM7 VOUT_D VIN_D net1 VDD_D sg13_lv_pmos w=4*5u l=2u ng=4 m=1
+XM8 VOUT_D VIN_D net3 net2 sg13_lv_nmos w=5u l=3u ng=1 m=1
+.ends
+
+.GLOBAL GND
+.end
