@@ -1,0 +1,43 @@
+** sch_path: /foss/designs/tb_inv.sch
+**.subckt tb_inv
+x1 VDD Vout Vin GND inv
+Vdd VDD GND 1.2
+VGS Vin GND 0.6
+C1 Vout GND 1p m=1
+**** begin user architecture code
+
+
+.dc VGS 0.0 1.2 0.01
+.control
+save all
+run
+let vout = v(Vout)
+let vin = v(Vin)
+let vout_vin = vout - vin
+meas dc Vm WHEN vout_vin=0
+
+write dc_logic_not.raw
+
+.endc
+
+
+
+.lib cornerMOSlv.lib mos_tt
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  inv.sym # of pins=4
+** sym_path: /foss/designs/inv.sym
+** sch_path: /foss/designs/inv.sch
+.subckt inv VDD VOUT VIN VSS
+*.iopin VDD
+*.iopin VSS
+*.opin VOUT
+*.ipin VIN
+XM2 VOUT VIN VDD VDD sg13_lv_pmos w=0.15u l=0.13u ng=1 m=2
+XM1 VOUT VIN VSS VSS sg13_lv_nmos w=0.15u l=0.13u ng=1 m=1
+.ends
+
+.GLOBAL GND
+.end

@@ -1,0 +1,61 @@
+** sch_path: /foss/designs/probandoMux.sch
+**.subckt probandoMux
+x1 net1 net4 V_out net3 net5 net2 MUXdosAuno
+VSS net2 GND 0
+VDD net1 GND 1.2
+VINA net4 GND dc
+VINB net5 GND dc
+VS net3 GND {VS}
+R1 V_out GND 1000k m=1
+**** begin user architecture code
+
+blabla
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  /foss/designs/Propio/MUXdosAuno.sym # of pins=6
+** sym_path: /foss/designs/Propio/MUXdosAuno.sym
+** sch_path: /foss/designs/Propio/MUXdosAuno.sch
+.subckt MUXdosAuno VDD VINA VOUT VS VINB VSS
+*.ipin VINA
+*.ipin VINB
+*.ipin VS
+*.opin VOUT
+*.iopin VDD
+*.iopin VSS
+x1 VDD VS net1 VSS InversorMio
+x2 VSS VDD VINA net1 vs VOUT transmissionGATE
+x3 VSS VDD VINB vs net1 VOUT transmissionGATE
+.ends
+
+
+* expanding   symbol:  /foss/designs/Propio/InversorMio.sym # of pins=4
+** sym_path: /foss/designs/Propio/InversorMio.sym
+** sch_path: /foss/designs/Propio/InversorMio.sch
+.subckt InversorMio Vdd Vin Vout Vss
+*.iopin Vss
+*.iopin Vdd
+*.ipin Vin
+*.opin Vout
+XM1 Vout Vin Vss Vss sg13_lv_nmos w=0.15u l=0.13u ng=1 m=1
+XM2 Vout Vin Vdd Vdd sg13_lv_pmos w=0.15u l=0.13u ng=1 m=1
+.ends
+
+
+* expanding   symbol:  /foss/designs/Propio/transmissionGATE.sym # of pins=6
+** sym_path: /foss/designs/Propio/transmissionGATE.sym
+** sch_path: /foss/designs/Propio/transmissionGATE.sch
+.subckt transmissionGATE VBN VBP VIN VSN VSP VOUT
+*.iopin VOUT
+*.iopin VIN
+*.iopin VSN
+*.iopin VSP
+*.iopin VBN
+*.iopin VBP
+XM2 VOUT VSP VIN VBP sg13_lv_pmos w=0.15u l=0.13u ng=1 m=1
+XM1 VOUT VSN VIN VBN sg13_lv_nmos w=0.15u l=0.13u ng=1 m=1
+.ends
+
+.GLOBAL GND
+.end
