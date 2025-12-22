@@ -1,0 +1,35 @@
+name: Update Project Dashboard
+permissions:
+  contents: write
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '**/project.yml'           # Run if metadata changes
+      - 'scripts/generate_dashboard.py' # Run if you tweak the script
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: pip install PyYAML
+
+      - name: Regenerate Dashboard
+        run: python3 scripts/generate_dashboard.py
+
+      - name: Commit and Push
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "docs: Auto-update project dashboard [skip ci]"
+          file_pattern: README.md
