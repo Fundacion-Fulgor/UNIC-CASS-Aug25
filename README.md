@@ -16,7 +16,7 @@ This repository indexes all tapeout postulations by Fundación FULGOR's fellows.
 - [FSE LMS](#fse-lms)
 - [CCR](#ccr)
 
-# [8-bit Gated Ring Oscillator Time-to-Digital Converter](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/GRO-TDC)
+# [8-bit Gated Ring Oscillator Time-to-Digital Converter](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/main/GRO-TDC)
 - Status: ✅ Accepted
 - Design Type: Digital
 - Designers:  Sebastian Hernandez,
@@ -25,12 +25,12 @@ Constanza Abiuso,
 Paula Brizzio (undergraduates)
 
 
-# [500Mhz Quadrature Delay Locked Loop](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/DelayLine)
+# [500Mhz Quadrature Delay Locked Loop](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/main/DelayLine)
 - Status: ✅ Accepted
 - Design Type: Analog
 - Designers: Leonardo Vazquez, Martin Doric (graduates) ; Clemente Molinari, Santiago Basignana, Matias Schulthess, Mateo Buteler (undergraduates)
 
-# [2 GHz 4-Quadrant Phase Interpolator with 8x Network](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/PhaseInterpolator)
+# [2 GHz 4-Quadrant Phase Interpolator with 8x Network](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/main/PhaseInterpolator)
 - Status: ✅ Accepted
 - Design Type: Analog
 - Designers:  Agustina Trabichet,
@@ -39,7 +39,7 @@ Macarena Gonzalez, Juana Pucheta
 Valentín Ramirez, Pablo Dominguez (undergraduates)
 
 
-# [High-Performance Amplifier](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/HPAmplifier)
+# [High-Performance Amplifier](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/main/HPAmplifier)
 - Status: ✅ Accepted
 - Design Type: Analog
 - Designers:  Santiago Recalde,
@@ -48,7 +48,7 @@ Juan Cruz Morán,
 Ezequiel Giorgis (undergraduates)
 
 
-# [Width-2Width DAC](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/W2WDAC)
+# [Width-2Width DAC](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/main/W2WDAC)
 - Status: ❌ Denied
 - Design Type: Analog
 - Designers:  Brayan Martinez,
@@ -57,13 +57,13 @@ Maximiliano Moreno
 Matias Schulthess (undergraduates)
 
 
-# [Digital Timing Recovery System with ML-based TED and Polyphase Filters](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/Digital-Timing-Recovery)
+# [Digital Timing Recovery System with ML-based TED and Polyphase Filters](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/main/Digital-Timing-Recovery)
 - Design Type: Digital
 - Designers: 
     Juan Chirino, Tiago Ruiz, Agustin Pesce (graduates) ; Agustin Arese, Juliana Maidana (undergraduates)
 
 
-# [MIPS Processor Pipeline](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/MIPS_Pipeline)
+# [MIPS Processor Pipeline](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/main/MIPS_Pipeline)
 - Design Type: Digital
 - Designers: Augusto Gabriel Cabrera,
 Juan Ignacio Chirino Bohorquez,
@@ -72,12 +72,12 @@ Camila Planes,
 Tiago Gastón Giaimis (undergraduates)
 
 
-# [Polyphase Transmission Filter](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/Tx_Polyphase_FIR)
+# [Polyphase Transmission Filter](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/main/Tx_Polyphase_FIR)
 - Design Type: Digital
 - Designers: Mariano Carcamo, Gabriel Garces (graduates) ; Leslie Barrios, Ignacio Gatti (undergraduates)
 
 
-# [UART Communication Interface for ALU](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/UARThmetic)
+# [UART Communication Interface for ALU](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/main/UARThmetic)
 - Design Type: Digital
 - Designers: Augusto Gabriel Cabrera,
 Juan Ignacio Chirino Bohorquez,
@@ -86,7 +86,7 @@ Camila Planes,
 Tiago Gastón Giaimis (undergraduates)
 
 
-# [32-Point MDC-8 FFT](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/parallel_fft)
+# [32-Point MDC-8 FFT](https://github.com/Fundacion-Fulgor/UNIC-CASS-Aug25/tree/main/parallel_fft)
 - Status: ✅ Accepted
 - Design Type: Digital
 - Designers: Adan Lema, Federico Villar (graduates); Julian Font, Agustin Romero, Valentina Mosquera (undergraduates)
