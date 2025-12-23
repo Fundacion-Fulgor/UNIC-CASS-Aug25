@@ -1,35 +1,60 @@
-name: Update Project Dashboard
+name: Daily Dashboard Sync
 permissions:
   contents: write
 
 on:
-  push:
-    branches: [ main ]
-    paths:
-      - '**/project.yml'           # Run if metadata changes
-      - 'scripts/generate_dashboard.py' # Run if you tweak the script
+  schedule:
+    # Runs at 12:00 UTC-3 every day
+    - cron: '0 15 * * *'
+  workflow_dispatch: # Allows manual trigger button
 
 jobs:
-  update-readme:
+  sync-and-update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref }}
+          submodules: recursive
+          token: ${{ secrets.PAT_TOKEN }} # Required to push changes back
+          fetch-depth: 0
+
+      - name: Update Submodules to Latest Remote
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Pulls the latest commit from the 'main' branch of each submodule
+          git submodule update --remote --recursive
+
+      - name: Check for Changes
+        id: check_changes
+        run: |
+          # 'git status -s' returns output if there are modified files (submodule pointers or content)
+          if [[ -n $(git status -s) ]]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+            echo "Updates found in submodules."
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "No updates found."
+          fi
 
       - name: Set up Python
+        if: steps.check_changes.outputs.changes == 'true'
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
       - name: Install Dependencies
+        if: steps.check_changes.outputs.changes == 'true'
         run: pip install PyYAML
 
       - name: Regenerate Dashboard
+        if: steps.check_changes.outputs.changes == 'true'
         run: python3 scripts/generate_dashboard.py
 
       - name: Commit and Push
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "docs: Auto-update project dashboard [skip ci]"
-          file_pattern: README.md
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          git add .
+          git commit -m "docs: Daily sync of submodule updates"
+          git push
