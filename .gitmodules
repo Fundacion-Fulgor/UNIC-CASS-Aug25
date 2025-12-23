@@ -1,3 +1,6 @@
 [submodule "DelayLine"]
 	path = DelayLine
 	url = git@github.com:Fundacion-Fulgor/DelayLine.git
+[submodule "Digital-Timing-Recovery"]
+	path = Digital-Timing-Recovery
+	url = git@github.com:Fundacion-Fulgor/Digital-Timing-Recovery.git
