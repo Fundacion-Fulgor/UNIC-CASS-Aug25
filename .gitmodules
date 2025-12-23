@@ -22,3 +22,6 @@
 [submodule "UARThmetic"]
 	path = UARThmetic
 	url = git@github.com:Fundacion-Fulgor/UARThmetic.git
+[submodule "W2WDAC"]
+	path = W2WDAC
+	url = git@github.com:Fundacion-Fulgor/W2WDAC.git
