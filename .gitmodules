@@ -7,3 +7,6 @@
 [submodule "GRO-TDC"]
 	path = GRO-TDC
 	url = git@github.com:Fundacion-Fulgor/GRO-TDC.git
+[submodule "HPAmplifier"]
+	path = HPAmplifier
+	url = git@github.com:Fundacion-Fulgor/HPAmplifier.git
