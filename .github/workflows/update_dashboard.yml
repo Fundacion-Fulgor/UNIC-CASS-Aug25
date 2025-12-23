@@ -1,12 +1,13 @@
 name: Daily Dashboard Sync
+
 permissions:
   contents: write
 
 on:
   schedule:
-    # Runs at 12:00 UTC-3 every day
+    # Runs at 12:00 UTC-3 (15:00 UTC) every day
     - cron: '0 15 * * *'
-  workflow_dispatch: # Allows manual trigger button
+  workflow_dispatch:
 
 jobs:
   sync-and-update:
@@ -15,24 +16,21 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: recursive
-          token: ${{ secrets.PAT_TOKEN }} # Required to push changes back
+          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
       - name: Update Submodules to Latest Remote
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # Pulls the latest commit from the 'main' branch of each submodule
           git submodule update --remote --recursive
 
       - name: Check for Changes
         id: check_changes
         run: |
-          # 'git status -s' returns output if there are modified files (submodule pointers or content)
           if [[ -n $(git status -s) ]]; then
             echo "changes=true" >> $GITHUB_OUTPUT
-            echo "Updates found in submodules."
+            echo "Updates found."
           else
             echo "changes=false" >> $GITHUB_OUTPUT
             echo "No updates found."
