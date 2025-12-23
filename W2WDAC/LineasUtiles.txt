@@ -1,8 +1,0 @@
-iic-pdk
-echo $PDK
-iic-pdk nombe_pdk
-
-
-"dc 0 ac 0 pulse(V1, V2, tdelay, trise, tfall, PW, Tperiod ) "
-
-name=Vin2 value="dc 0 ac 0 pulse(0, 1.2, 0, 1n, 1n, 1n, 4n )
