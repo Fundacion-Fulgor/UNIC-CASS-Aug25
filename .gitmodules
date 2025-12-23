@@ -13,3 +13,6 @@
 [submodule "MIPS_Pipeline"]
 	path = MIPS_Pipeline
 	url = git@github.com:Fundacion-Fulgor/MIPS_Pipeline.git
+[submodule "PhaseInterpolator"]
+	path = PhaseInterpolator
+	url = git@github.com:Fundacion-Fulgor/PhaseInterpolator.git
