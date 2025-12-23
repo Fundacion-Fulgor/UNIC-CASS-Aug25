@@ -16,3 +16,6 @@
 [submodule "PhaseInterpolator"]
 	path = PhaseInterpolator
 	url = git@github.com:Fundacion-Fulgor/PhaseInterpolator.git
+[submodule "Tx_Polyphase_FIR"]
+	path = Tx_Polyphase_FIR
+	url = git@github.com:Fundacion-Fulgor/Tx_Polyphase_FIR.git
