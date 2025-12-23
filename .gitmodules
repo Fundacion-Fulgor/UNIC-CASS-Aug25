@@ -4,3 +4,6 @@
 [submodule "Digital-Timing-Recovery"]
 	path = Digital-Timing-Recovery
 	url = git@github.com:Fundacion-Fulgor/Digital-Timing-Recovery.git
+[submodule "GRO-TDC"]
+	path = GRO-TDC
+	url = git@github.com:Fundacion-Fulgor/GRO-TDC.git
