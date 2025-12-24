@@ -1,0 +1,13 @@
+** sch_path: /home/designer/UNIC-CASS-Aug25/Custom_std_cells/nand_custom.sch
+**.subckt nand_custom VDD OUT A B VSS
+*.iopin A
+*.iopin B
+*.iopin VDD
+*.iopin VSS
+*.iopin OUT
+XM1 OUT A net1 VSS sg13_lv_nmos w=0.15u l=0.13u ng=1 m=1
+XM2 OUT A VDD VDD sg13_lv_pmos w=0.15u l=0.13u ng=1 m=1
+XM3 net1 B VSS VSS sg13_lv_nmos w=0.15u l=0.13u ng=1 m=1
+XM4 OUT B VDD VDD sg13_lv_pmos w=0.15u l=0.13u ng=1 m=1
+**.ends
+.end
