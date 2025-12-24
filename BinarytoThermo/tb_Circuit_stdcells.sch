@@ -178,9 +178,9 @@ C {lab_pin.sym} 400 310 2 0 {name=p12 sig_type=std_logic lab=avss}
 C {lab_pin.sym} 325 -150 0 0 {name=p13 sig_type=std_logic lab=avdd}
 C {lab_pin.sym} 325 10 0 0 {name=p14 sig_type=std_logic lab=avdd}
 C {lab_pin.sym} 325 160 0 0 {name=p15 sig_type=std_logic lab=avdd}
-C {/home/designer/UNIC-CASS-Aug25/BinarytoThermo/inv_prtt.sym} 360 -230 0 0 {name=x2}
-C {/home/designer/UNIC-CASS-Aug25/BinarytoThermo/inv_prtt.sym} 360 -80 0 0 {name=x3}
-C {/home/designer/UNIC-CASS-Aug25/BinarytoThermo/inv_prtt.sym} 360 80 0 0 {name=x4}
-C {/home/designer/UNIC-CASS-Aug25/BinarytoThermo/inv_prtt.sym} 360 230 0 0 {name=x5}
+C {inv.sym} 360 -230 0 0 {name=x2}
+C {inv.sym} 360 -80 0 0 {name=x3}
+C {inv.sym} 360 80 0 0 {name=x4}
+C {inv.sym} 360 230 0 0 {name=x5}
 C {lab_pin.sym} 940 -265 1 0 {name=p24 sig_type=std_logic lab=avdd}
 C {bsource.sym} 980 130 0 0 {name=B1 VAR=I FUNC="'pwl(V(plus,minus),0,0, 1,10m, 2, 100m)'" m=1}

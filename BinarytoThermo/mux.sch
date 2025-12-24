@@ -1,9 +1,8 @@
-v {xschem version=3.4.8RC file_version=1.2}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {}
 V {}
 S {}
-F {}
 E {}
 N -30 -90 80 -90 {lab=#net1}
 N -410 130 -410 260 {lab=i_control}
@@ -48,10 +47,10 @@ N 150 240 400 240 {lab=i_vss}
 N 400 -170 400 -20 {lab=i_vdd}
 N 150 -170 400 -170 {lab=i_vdd}
 N 510 40 560 40 {lab=o_out}
-C {/foss/designs/Termo_codePI/inv_prtt.sym} -150 -90 0 0 {name=x1}
-C {/foss/designs/Termo_codePI/nand_prtt.sym} 180 -60 0 0 {name=x2}
-C {/foss/designs/Termo_codePI/nand_prtt.sym} 180 160 0 0 {name=x3}
-C {/foss/designs/Termo_codePI/nand_prtt.sym} 430 50 0 0 {name=x4}
+C {inv.sym} -150 -90 0 0 {name=x1}
+C {nand_custom.sym} 180 -60 0 0 {name=x2}
+C {nand_custom.sym} 180 160 0 0 {name=x3}
+C {nand_custom.sym} 430 50 0 0 {name=x4}
 C {iopin.sym} -410 -190 3 0 {name=p1 lab=i_control}
 C {iopin.sym} -470 -190 3 0 {name=p2 lab=i_B}
 C {iopin.sym} -530 -190 3 0 {name=p3 lab=i_A}

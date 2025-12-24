@@ -73,9 +73,9 @@ C {iopin.sym} 200 110 0 0 {name=p5 lab=s3t}
 C {iopin.sym} 190 280 0 0 {name=p6 lab=s4t}
 C {iopin.sym} -590 -340 3 0 {name=p7 lab=vdd}
 C {iopin.sym} -640 -340 3 0 {name=p10 lab=vss}
-C {/home/designer/UNIC-CASS-Aug25/BinarytoThermo/nand_prtt.sym} 60 120 0 0 {name=x3}
-C {/home/designer/UNIC-CASS-Aug25/BinarytoThermo/nor_prtt.sym} 20 -190 0 0 {name=x1}
-C {/home/designer/UNIC-CASS-Aug25/BinarytoThermo/inv_prtt.sym} -400 -240 0 0 {name=x2}
-C {/home/designer/UNIC-CASS-Aug25/BinarytoThermo/inv_prtt.sym} 30 -40 0 0 {name=x4}
-C {/home/designer/UNIC-CASS-Aug25/BinarytoThermo/inv_prtt.sym} -390 -40 0 0 {name=x5}
-C {/home/designer/UNIC-CASS-Aug25/BinarytoThermo/inv_prtt.sym} 30 280 0 0 {name=x6}
+C {nand_custom.sym} 60 120 0 0 {name=x3}
+C {nor_custom.sym} 20 -190 0 0 {name=x1}
+C {inv.sym} -400 -240 0 0 {name=x2}
+C {inv.sym} 30 -40 0 0 {name=x4}
+C {inv.sym} -390 -40 0 0 {name=x5}
+C {inv.sym} 30 280 0 0 {name=x6}
