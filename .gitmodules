@@ -28,3 +28,6 @@
 [submodule "parallel_fft"]
 	path = parallel_fft
 	url = git@github.com:Fundacion-Fulgor/parallel_fft.git
+[submodule "FSE-LMS"]
+	path = FSE-LMS
+	url = git@github.com:Fundacion-Fulgor/FSE-LMS.git
