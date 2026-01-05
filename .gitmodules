@@ -31,3 +31,6 @@
 [submodule "FSE-LMS"]
 	path = FSE-LMS
 	url = git@github.com:Fundacion-Fulgor/FSE-LMS.git
+[submodule "CCR"]
+	path = CCR
+	url = git@github.com:Fundacion-Fulgor/CCR.git
