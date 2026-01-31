@@ -5,7 +5,7 @@ This repository indexes all tapeout postulations by Fundación FULGOR's fellows.
 | Project | Domain | Authors | Tapeout Target | Description |
 |---|---|---|:---:|---|
 | [CCR](https://github.com/Fundacion-Fulgor/CCR) | Digital | Ignacio Balbo, Agustin Pesce, Giselle Denise, Mauro Cabero | ❌ |  |
-| [500Mhz Quadrature Delay Locked Loop](https://github.com/Fundacion-Fulgor/QDLL) | Analog | Leonardo Vazquez, Martin Doric, Clemente Molinari, Santiago Basignana, Matias Schulthess, Mateo Buteler | ✅ |  |
+| [500Mhz Quadrature Delay Locked Loop](https://github.com/Fundacion-Fulgor/DelayLine) | Analog | Leonardo Vazquez, Martin Doric, Clemente Molinari, Santiago Basignana, Matias Schulthess, Mateo Buteler | ✅ |  |
 | [Digital Timing Recovery System with ML-based TED and Polyphase Filters](https://github.com/Fundacion-Fulgor/Digital-Timing-Recovery) | Digital | Juan Chirino, Tiago Ruiz, Agustin Pesce, Agustin Arese, Juliana Maidana | ❌ |  |
 | [FSE LMS](https://github.com/Fundacion-Fulgor/FSE-LMS) | Digital | Ramiro Ferreyra, Santiago Garaventta, Jorge Guerra, Ezequiel Cavestri, Octavio Baccino | ✅ |  |
 | [8-bit Gated Ring Oscillator Time-to-Digital Converter](https://github.com/Fundacion-Fulgor/GRO-TDC) | Digital | Sebastian Hernandez, Emiliano Marclé, Constanza Abiuso, Paula Brizzio | ✅ |  |
