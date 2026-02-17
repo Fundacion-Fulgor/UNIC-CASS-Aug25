@@ -35,12 +35,22 @@ jobs:
         run: python3 scripts/generate_dashboard.py
 
       - name: Check for Changes & Commit
-        run: |          
+        run: |
+          # Check and commit changes in submodules first
+          git submodule foreach --recursive '
+            if [[ -n $(git status -s) ]]; then
+              echo "Changes detected in submodule $name"
+              git add .
+              git commit -m "Auto-update from dashboard sync" || true
+            fi
+          '
+          
+          # Now check for changes in the main repo
           if [[ -n $(git status -s) ]]; then
             echo "Updates found. Committing..."
             git add .
             git commit -m "docs: Sync dashboard and submodules"
-            git push
+            git push --recurse-submodules=on-demand
           else
             echo "No changes to commit."
           fi
